@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    margin: 0px !important;
+}
+
+.signup-face {
+    height: 95%;
+    width: 100%;
+}
+
+.col-sm-6 {
+    padding: 0px !important;
+}
+
+.signup-title {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin-bottom: 90px;
+}
+
+.signup-container {
+    padding-bottom: 10px;
+}
+
+.signup-group input {
+    outline: none;
+    width: 70%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid #2C2C2C;
+    border-radius: 50px;
+    padding: 12px;
+    padding-left: 17px;
+}
+
+.form-container {
+    margin-top: 2.3in;
+}
+
+.signup-button {
+    margin-top: 30px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #FEB005;
+    outline: none;
+}
+
+.signup-group2 input {
+    outline: none;
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    padding-left: 30%;
+    color: white;
+}
