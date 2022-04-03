@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* body {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.container-fluid {
+    border: 1px solid red;
+}
+
+.row {
+    border: 1px solid black;
+}
+
+.col-sm-6 {
+    border: 2px solid blue;
+}
+
+.p-0 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 1px solid yellow;
+}
+
+.p-10 {
+    background-color: #7ee2de;
+}
+
+.login-face-con {
+    background-color: bisque;
+}
+
+.login-face {
+    border: 29px solid green;
+} */
+
+
+/*  */
+
+.p-10 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-fluid {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* .row {
+    border: 3px solid green;
+} */
+
+.col-sm-6 {
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    margin: 0px !important;
+}
+
+.login-face-con img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* .login-face-con {
+    border: 2px solid black;
+} */
+
+.centerer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.login-title {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin-bottom: 90px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.textbox-login {
+    border-radius: 20px;
+    width: 100%;
+    height: 43px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.btn-login {
+    background-color: #6EBBB8;
+    outline: none;
+    height: 42px;
+    margin-top: 30px;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    width: 90%;
+}
+
+.forgot-p {
+    text-align: right;
+    font-style: italic;
+    color: gray;
+    width: 90%;
+}
+
+.logo {
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .login-face-con img {
+        object-fit: fill;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .login-face-con {
+        display: none;
+    }
+    /* .logo {
+        display: block;
+        margin: 0%;
+    }
+    .logo img {
+        width: 25%;
+        padding-top: 10px;
+    } */
+    .col-sm-6 {
+        /* background: linear-gradient(90deg, #88C6C3 25%, #B0DBD9 25% 50%, #DAEEED 50% 75%); */
+        border-top-right-radius: 200px;
+        border-bottom-left-radius: 200px;
+        background-color: #6ebbb8cc;
+    }
+    .login-title {
+        color: white;
+    }
+}

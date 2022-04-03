@@ -23,7 +23,7 @@
         <header class="head my-3">
             <nav class="navbar navbar-expand-lg navbar-light head__custom-nav">
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="images/swapee_ic.png">
+                    <img src="images/logo.png">
                     <span>SWAPEE</span>
                 </a>
 
@@ -48,7 +48,7 @@
                             <a class="nav-link" href="#section4">TEAM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link join-us" style="color: white; background-color: #FEB005;" href="index.php">JOIN US</a>
+                            <a class="nav-link join-us" style="color: white; background-color: #FEB005;" href="samp.php">JOIN US</a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@
                 <a href="#">Get Started!</a>
             </div>
             <div class="col-12 col-lg-8">
-                <img src="images/Online store _Isometric 1 (2).png" alt="Swapee banner">
+                <img src="images/home_icon.png" alt="Swapee banner">
                     
             </div>
         </div>
@@ -80,7 +80,7 @@
             <div class="row custom-section d-flex align-items-center">
 
                 <div class="col-12 col-lg-8">
-                    <img src="images/Online Shopping_Isometric 1.png" alt="Swapee banner">
+                    <img src="images/services_icon.png" alt="Swapee banner">
                 </div>
 
                 <div class="col-12 col-lg-4">
@@ -100,7 +100,7 @@
                     <p>Integer sit amet tortor iaculis, pulvinar orci ac, dapibus arcu. Nulla tempus vehicula est, vel aliquam enim pretium viverra. Ut et efficitur mi. Nunc libero mauris, facilisis quis purus eget, tempor scelerisque eros.</p>
                 </div> 
                 <div class="col-12 col-lg-8">
-                    <img src="images/Online payment_Isometric 1.png" alt="Swapee banner">
+                    <img src="images/features_icon.png" alt="Swapee banner">
                     
                 </div>
             </div>
@@ -163,7 +163,7 @@
                 
                 <!-- sarai -->
                 <div class="sari">
-                    <img src="images/carterino.jpeg" alt="" srcset="">
+                    <img src="images/sari.jpeg" alt="" srcset="">
                     <div id="description">
                         <h6>Sarai Carreon</h6>
                         <p>Web Designer</p>

@@ -1,32 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-html{
-    margin:0px !important;
-
+html {
+    margin: 0px !important;
 }
 
-.login-face{
+.login-face {
     height: 95%;
 }
 
-.login-face-con{
+.login-face-con {
     margin-bottom: -10px;
 }
 
-.centerer{
+.centerer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 80%;
 }
 
-.login-title{
+.login-title {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     margin-bottom: 90px;
 }
-.login-form{
+
+.login-form {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,7 +33,7 @@ html{
     width: 60%;
 }
 
-.textbox-login{
+.textbox-login {
     border-radius: 20px;
     width: 100%;
     height: 43px;
@@ -42,21 +41,20 @@ html{
     padding: 10px;
 }
 
-.btn-login{
+.btn-login {
     background-color: #6EBBB8;
     outline: none;
     height: 42px;
     margin-top: 30px;
     border-radius: 20px;
     color: white;
-    border:none;
+    border: none;
     width: 90%;
 }
 
-.forgot-p{
+.forgot-p {
     text-align: right;
     font-style: italic;
     color: gray;
     width: 90%;
 }
-
