@@ -17,11 +17,28 @@
 
 </head>
 <body>
+
+    <!-- outside container -->
     <div class="container-fluid">
+
+        <!-- inside container -->
         <div class="row">
+
+        <div class="logo">
+            <nav>
+                <img src="images/logo.png" id="logo1" alt="" srcset="">
+            </nav>
+            
+        </div>
+        
+ 
+            <!-- left side -->
             <div class="col-sm-6 p-0 login-face-con">
                 <img src="images/login_face.png" alt="" class="login-face">
             </div>
+
+
+            <!-- right side  -->
             <div class="col-sm-6 p-10">
                 <div class="centerer">
                     <h1 class="login-title">LOG IN</h1>
@@ -37,6 +54,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </body>
