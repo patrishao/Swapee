@@ -10,6 +10,8 @@
     <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- css -->
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -19,19 +21,44 @@
     <nav> NAVBAR</nav>
 
 
+
+
+    <?php
+
+    // getting the category named that was passed on the previous page
+    $categoryName = $_GET['categ'];
+
+    $allItem = "all-items";
+
+
+
+    ?>
+
+
     <div class="body">
 
         <!-- title -->
-        <div class="title  ">
+        <div class="title-categ position-relative">
 
 
-            <div class="container d-flex justify-content-center align-content-center align-items-center ">
+            <div class="container ">
 
-                <h1 class="p-5 ">Swap anywhere online!</h1>
+                <p class="category-top-title">Category / <span class="categ-top-type"> <?php
 
-                <img src="images/home/top.png" alt="" class="">
+
+                                                                                        // displaying the category title based on the data obtained in the link
+                                                                                        if (strpos($categoryName, $allItem) !== false) {
+                                                                                            echo "All items";
+                                                                                        } else {
+                                                                                            echo $categoryName;
+                                                                                        }
+
+                                                                                        ?></span></p>
 
             </div>
+
+
+
 
         </div>
 
@@ -90,7 +117,7 @@
 
                         <div class="row row-cols-md-3 row-cols-1">
 
-                            <div class="item col ">
+                            <div class="item2 col ">
                                 <img src="images/home/item-placeholder.png" alt="">
 
                                 <div class="item-details mt-3">
@@ -100,7 +127,7 @@
                                 </div>
                             </div>
 
-                            <div class="item col ">
+                            <div class="item2 col ">
                                 <img src="images/home/item-placeholder.png" alt="">
 
                                 <div class="item-details mt-3">
@@ -110,7 +137,27 @@
                                 </div>
                             </div>
 
-                            <div class="item col">
+                            <div class="item2 col">
+                                <img src="images/home/item-placeholder.png" alt="">
+
+                                <div class="item-details mt-3">
+                                    <p class="item-categ">Books</p>
+                                    <p class="item-name">Books of Romains</p>
+                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
+                                </div>
+                            </div>
+
+                            <div class="item2 col">
+                                <img src="images/home/item-placeholder.png" alt="">
+
+                                <div class="item-details mt-3">
+                                    <p class="item-categ">Books</p>
+                                    <p class="item-name">Books of Romains</p>
+                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
+                                </div>
+                            </div>
+
+                            <div class="item2 col">
                                 <img src="images/home/item-placeholder.png" alt="">
 
                                 <div class="item-details mt-3">
@@ -121,47 +168,53 @@
                             </div>
 
 
-
-
-                        </div>
-
-
-
-
-                        <div class="row mt-5  row-cols-md-2 row-cols-1 ">
-
-                            <div class="item">
+                            <div class="item2 col">
                                 <img src="images/home/item-placeholder.png" alt="">
 
                                 <div class="item-details mt-3">
                                     <p class="item-categ">Books</p>
                                     <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-offered">offered</span></p>
+                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
                                 </div>
                             </div>
-
-                            <div class="item  ">
-                                <img src="images/home/item-placeholder.png" alt="">
-
-                                <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-offered">offered</span></p>
-                                </div>
-                            </div>
+                        </div>
 
 
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="pages ">
+
+                        <div class="container d-flex align-content-center justify-content-center ">
+                            <nav aria-label="Page navigation ">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <i class="bi bi-chevron-left"></i>
+
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <i class="bi bi-chevron-right"></i>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
 
                     </div>
-
-
-                    <div class="container text-center mt-5">
-                        <button class="see-all">See All</button>
-                    </div>
-
                 </div>
-
 
             </div>
 

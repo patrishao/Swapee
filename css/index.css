@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    font-family: 'Inter', sans-serif;
+    color: #2C2C2C;
+
+}
+
+/* title */
+
+.title {
+    background-color: #FFF9EC;
+
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 40%;
+
+
+}
+
+.title-categ {
+
+
+    background: url("../images/home/cover-categ.png") no-repeat center;
+
+    max-height: 50vh;
+    height: 50vh;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.category-top-title {
+    position: absolute;
+    top: 50%;
+    transform: (-50%);
+    color: rgba(44, 44, 44, 0.51);
+    ;
+}
+
+.categ-top-type {
+    color: #2C2C2C;
+    text-transform: capitalize;
+}
+
+.title img {
+    width: 50%;
+}
+
+/* top-ad */
+
+.top-ad img {
+    width: 60%;
+}
+
+/* aside */
+
+.aside {
+    margin-right: 5em;
+}
+
+
+
+/* making them all in column */
+.aside>* {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.aside h4 {
+    font-weight: 900;
+
+
+}
+
+.aside a {
+    text-decoration: none;
+    color: #535353;
+}
+
+.aside a:hover {
+    color: #5CACA9;
+}
+
+
+
+.item {
+    font-size: 0.9rem;
+    /* width: 33.3%; */
+
+
+}
+
+.item2 {
+    font-size: 0.9rem;
+    margin-top: 1.5em;
+}
+
+
+
+.item img {
+    width: 100%;
+    max-height: 60vh;
+    border-radius: 20px;
+}
+
+
+.item2 img {
+    width: 100%;
+    max-height: 45vh;
+    border-radius: 20px;
+}
+
+
+
+
+.item-details>* {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.item-categ {
+    color: #9D9D9D;
+}
+
+.item-status {
+    text-transform: capitalize;
+}
+
+.status-offered {
+    color: #E84C1C;
+}
+
+
+.status-wanted {
+    color: #5CACA9;
+}
+
+.featured-title {
+    font-weight: 700;
+}
+
+.see-all {
+    background-color: #FEB005;
+    color: white;
+    padding: 0.6em 1.5em;
+    border-radius: 10px;
+    border: none;
+}
+
+.see-all:hover {
+    background-color: #5CACA9;
+}
+
+.bot-ad img {
+    width: 85%;
+    max-height: 30vh;
+}
+
+
+/* pagination */
+.pages {
+    margin-top: 6em;
+
+}
+
+
+.pagination>li>a {
+    border: none;
+}
+
+.pagination>li>a {
+    color: #9D9D9D;
+}
+
+.pagination>li>a:active,
+.pagination>li>a:focus,
+.pagination:focus,
+.pagination:active {
+    color: black;
+    background-color: transparent;
+    border: 0px solid white;
+
+}
+
+.pagination a:hover {
+    background-color: #5caca9b3;
+    border: none;
+    color: white;
+}
