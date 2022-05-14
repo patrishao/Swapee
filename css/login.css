@@ -51,6 +51,11 @@ html {
     margin-bottom: 90px;
 }
 
+.text-login{
+    text-align: center;
+    margin-top: 40px;
+}
+
 .login-form {
     display: flex;
     flex-direction: row;
