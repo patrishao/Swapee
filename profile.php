@@ -9,8 +9,29 @@
       <!-- Bootstrap CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/profile.css">
+
 </head>
 <body>
-    
+    <div class="container">
+
+    <!-- inside container -->
+      <div class="row">
+
+      <!-- left side -->
+        <div class="col-sm-6 post-side">
+          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+        </div>
+
+      <!-- right side (profile)-->
+      <div class="col-sm-6 profile-side">
+        profile side
+      </div>
+
+      </div>
+    </div>
 </body>
 </html>
