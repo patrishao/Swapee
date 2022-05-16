@@ -37,9 +37,9 @@
                     <h1 class="login-title">SIGN UP</h1>
                     <div class="log-in-container d-flex justify-content-center">
                         <form action="" class="login-form">
-                            <input type="email" placeholder="Email" class="textbox-login">
-                            <input type="password" placeholder="Password" class="textbox-login">
-                            <input type="password" placeholder="Password" class="textbox-login">
+                            <input type="email" name="email "placeholder="Email" class="textbox-login">
+                            <input type="password" name="password" placeholder="Password" class="textbox-login">
+                            <input type="password" name="re-type password" placeholder="Re-type Password" class="textbox-login">
                             <a href="#" class="forgot-p">Forgot password?</a>
                             <button type="submit" value="" class="btn-login"> 
                                 SIGN UP
