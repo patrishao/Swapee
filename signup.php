@@ -37,6 +37,9 @@
                             <div class="signup-group2">
                                 <input type="button" value="SIGN UP" class="signup-button">
                             </div>
+
+
+                            <p class="text-signup">Already have an account? <a href="login.php">Ah Okay</a></p>
                         </div>       
                     </form>
                 </div>
