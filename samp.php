@@ -47,7 +47,7 @@
                         </form>
                        
                     </div>
-                    <div class="text-login">Don't have an account? <a href="login.php" class="">Sign up here!</a></div>
+                    <div class="text-login">Don't have an account? <a href="login.php" class="">Sign in here!</a></div>
                 </div>
             </div>
 

@@ -117,8 +117,8 @@
 
             <div class="team">
                 <!-- patrisha -->
-                <div class="pat">
-                    <img src="images/carterino.jpeg" alt="" srcset="">
+                <div class="member">
+                    <div class="profile"><img src="images/carterino.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Patrisha Ortigas</h6>
                         <p>Backend Developer</p>
@@ -126,8 +126,8 @@
                 </div>
 
                 <!-- carter -->
-                <div class="cart">
-                    <img src="images/carterino.jpeg" alt="" srcset="">
+                <div class="member">
+                    <div class="profile"><img src="images/carterino.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Trisha Catis</h6>
                         <p>Frontend Developer</p>
@@ -135,8 +135,8 @@
                 </div>
 
                 <!-- gabby -->
-                <div class="gab">
-                    <img src="images/carterino.jpeg" alt="" srcset="">
+                <div class="member">
+                <div class="profile"><img src="images/gabby.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Alysxandra Reyes</h6>
                         <p>Frontend Developer</p>
@@ -144,8 +144,8 @@
                 </div>
                 
                 <!-- ruth -->
-                <div class="ruth">
-                    <img src="images/carterino.jpeg" alt="" srcset="">
+                <div class="member">
+                    <div class="profile"><img src="images/ruth.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Ruth Amurao</h6>
                         <p>Frontend Developer</p>
@@ -153,8 +153,8 @@
                 </div>
 
                 <!-- bianca -->
-                <div class="bia">
-                    <img src="images/carterino.jpeg" alt="" srcset="">
+                <div class="member">
+                    <div class="profile"><img src="images/carterino.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Bianca Dalangin</h6>
                         <p>Web Designer</p>
@@ -162,8 +162,8 @@
                 </div>
                 
                 <!-- sarai -->
-                <div class="sari">
-                    <img src="images/sari.jpeg" alt="" srcset="">
+                <div class="member">
+                    <div class="profile"><img src="images/sari.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Sarai Carreon</h6>
                         <p>Web Designer</p>
