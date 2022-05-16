@@ -46,14 +46,14 @@
                         <form action="" class="login-form">
                             <input type="email" placeholder="Email" class="textbox-login">
                             <input type="password" placeholder="Password" class="textbox-login">
-                            <p class="forgot-p">Forgot password?</p>
+                            <a href="#" class="forgot-p">Forgot password?</a>
                             <button type="submit" value="" class="btn-login"> 
                                 LOG IN
                             </button>
                         </form>
                        
                     </div>
-                    <div class="text-login">Don't have an account? <a href="signup.php" class="">Ah Okay</a></div>
+                    <div class="text-login">Don't have an account? <a href="signup.php" class="">Sign up here!</a></div>
                 </div>
             </div>
 
