@@ -80,8 +80,6 @@ nav .search-box span::after {
     transition: 0.03s;
 }
 
-nav .search-box span:hover::after {}
-
 nav .bar {
     position: relative;
     margin: auto;
