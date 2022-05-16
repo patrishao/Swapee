@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+nav {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#icon img {
+    width: 100px;
+    margin: 20px 95px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+}
+
+nav ul li a {
+    font-family: 'Inter';
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: black;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+a:hover {
+    background: #FEB005;
+    color: white;
+    border-radius: 10px;
+}
+
+nav .search-box {
+    display: flex;
+    margin: auto 0;
+    height: 30px;
+    line-height: 35px;
+}
+
+nav .search-box input {
+    font-family: 'Inter';
+    border: 1px solid #4a4846;
+    outline: none;
+    background-color: whitesmoke;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    width: 320px;
+    border-radius: 10px;
+}
+
+nav .search-box span {
+    font-size: 20px;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+nav .search-box span:hover {
+    color: #FEB005;
+}
+
+nav .search-box span::after {
+    height: 100%;
+    width: 0%;
+    content: '';
+    background-color: aqua;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+    transition: 0.03s;
+}
+
+nav .search-box span:hover::after {}
+
+nav .bar {
+    position: relative;
+    margin: auto;
+    display: none;
+}
+
+nav .bar span {
+    position: absolute;
+    color: black;
+    font-size: 35px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        display: block;
+        padding: 0;
+    }
+    nav .icon {
+        display: inline-block;
+        padding: 15px 30px;
+    }
+    nav .search-box {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    nav .search-box input {
+        width: 50%;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        background-color: #FEB005;
+        height: 0;
+        visibility: hidden;
+        transition: 0.03s;
+    }
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+    a:hover {
+        background-color: white;
+        color: #4a4846;
+    }
+    nav ul li a {
+        color: aliceblue;
+        font-size: 18px;
+        padding: 25px;
+        display: block;
+    }
+    nav .bar {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 80px;
+        cursor: pointer;
+    }
+    nav .bar #times {
+        display: none;
+    }
+    #check:checked~nav .bar #times {
+        display: block;
+    }
+    #check:checked~nav .bar #bars {
+        display: none;
+    }
+    #check:checked~nav ul {
+        visibility: visible;
+        height: 325px;
+    }
+}

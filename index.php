@@ -16,7 +16,7 @@
 
 <body>
 
-    <nav> NAVBAR</nav>
+    <?php include 'navbar.php';?>
 
 
     <div class="body">

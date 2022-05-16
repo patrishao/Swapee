@@ -48,7 +48,7 @@
                             <a class="nav-link" href="#section4">TEAM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link join-us" style="color: white; background-color: #FEB005;" href="samp.php">JOIN US</a>
+                            <a class="nav-link join-us" style="color: white; background-color: #FEB005;" href="login.php">JOIN US</a>
                         </li>
                     </ul>
                 </div>
