@@ -39,7 +39,7 @@
                             </div>
 
 
-                            <p class="text-signup">Already have an account? <a href="login.php">Ah Okay</a></p>
+                            <p class="text-signup">Already have an account? <a href="login.php">Sign in here!</a></p>
                         </div>       
                     </form>
                 </div>
