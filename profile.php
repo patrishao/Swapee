@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,20 +15,24 @@
 
 </head>
 <body>
+<?php include 'navbar.php';
+  
+  
+  ?>
     <div class="container">
 
     <!-- inside container -->
       <div class="row">
 
       <!-- left side -->
-        <div class="col-md-6 post-side">
+        <div class="col-md-6 order-lg-1 order-md-1 order-sm-2 post-side">
           <img src="images\placeholder.jpg" alt="" class="post-placeholder">
           <img src="images\placeholder.jpg" alt="" class="post-placeholder">
           <img src="images\placeholder.jpg" alt="" class="post-placeholder">
         </div>
 
       <!-- right side (profile)-->
-      <div class="col-md-6 profile-side">
+      <div class="col-md-6 order-lg-2 order-md-1 order-sm-1 profile-side">
 
         <div class="content-container">
 
@@ -40,9 +45,17 @@
               </div>
               <div class="bio">bio po it maglagay ng kung anong ano dine thank u</div>
               <div class="container-secondpt">
-                <div class="location">dubai baket</div>
-                <div class="rating"></div>
-                <div class="prof-buttons"></div>
+
+                <div class="location"> <img src="images\icons\fa6-solid_map-pin.png" alt="" class="location-img">
+                <p class="location-details">dubai baket</p></div>
+
+                <div class="rating"> <img src="images\icons\bi_star.png" alt="" class="rating-img">
+                <p class="rating-details">5/5</p></div>
+
+                <div class="prof-buttons">
+                  <img src="images\icons\ci_settings.png" alt="">
+                  <img src="images\icons\akar-icons_plus.png" alt="">
+                </div>
               </div>
 
           </div>
