@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #5CACA9;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.container2 {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+}
+
+.title-edit {
+    margin-bottom: 50px;
+}
+
+h4 {
+    font-size: 35px;
+}
+
+.acc-details {
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.usernames {
+    margin-left: 20px;
+    height: 129px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.username1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.username2 {
+    font-size: 15px;
+    margin-top: -18px;
+    color: #8a8a8a;
+    font-weight: 500;
+}
+
+.edit-pic {
+    height: 129px;
+    width: 129px;
+    border-radius: 50%;
+}
+
+.editprof-group label {
+    font-size: 10px;
+    color: #9D9D9D;
+    transition: 0.3s;
+}
+
+.editprof-group input {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #9D9D9D;
+    padding: 2.5px 0px 3px 0px;
+    width: 100%;
+}
+
+.editprof-group label:hover {
+    color: black;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.cancel {
+    background-color: white;
+    width: 80px;
+    height: 43px;
+    border-radius: 15px;
+    border: 1px solid #2C2C2C;
+    transition: 0.3s;
+}
+
+.cancel:hover {
+    border: 1px solid #5CACA9;
+}
+
+.cancel a:hover {
+    color: #5CACA9;
+    background-color: white;
+}
+
+.save {
+    background-color: #5CACA9;
+    width: 65px;
+    height: 43px;
+    border-radius: 15px;
+    border: 1px solid #5CACA9;
+    margin-left: 15px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.save:hover {
+    background-color: #FEB005;
+    border: 1px solid #FEB005;
+}
+
+@media (max-width: 405px) {
+    .acc-details {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    .acc-details img {
+        display: block;
+    }
+}
