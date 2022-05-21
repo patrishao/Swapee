@@ -155,6 +155,11 @@ html {
     .prof-buttons{
         margin-left: 100px;
     }
+
+    .bio{
+        border-bottom: none;
+        
+    }
 }
 
 @media screen and (max-width: 576px) {
