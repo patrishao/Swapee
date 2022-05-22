@@ -206,3 +206,9 @@ body {
     border: none;
     color: white;
 }
+
+@media (max-width: 991.98px) {
+    .aside {
+        margin-right: 0em;
+    }
+}
