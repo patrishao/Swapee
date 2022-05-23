@@ -27,8 +27,11 @@
       <!-- left side -->
         <div class="col-md-6 order-lg-1 order-md-1 order-sm-2 post-side">
           <div class="post-holder"> 
-                <img src="images\placeholder.jpg" alt="" class="post-placeholder">
-                </div>
+          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+                <div class="name-item">Snake Plant</div>
+                <div class="categ-item">Others</div>
+                <div class="time-item">Monday, April 11</div>
+                <div class="boost-item">Boost Post</div>
             </div>
             <div class="post-holder"> 
                 <img src="images\placeholder.jpg" alt="" class="post-placeholder">
