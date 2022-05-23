@@ -4,7 +4,10 @@
 html {
     margin: 0px !important;
 }
+img{
+    margin: 0;
 
+}
 .post-side{
     display: flex;
     flex-wrap: wrap;
@@ -16,12 +19,62 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 80%;
+    height: 300px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 24px 81px 0px rgba(0,0,0,0.75) inset;
+    border: none;
+    overflow: hidden;
 }
-
 .post-placeholder{
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+}
+
+.information-item{
+    position: absolute;
+    color: white;
+}
+
+.name-item{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    position: relative;
+    padding: 30px 30px 0px 30px;
+    right: 157px;
+}
+
+.categ-item{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    position: relative;
+    padding: 0px 30px 0px 30px;
+    right: 153px;
+}
+
+.time-item{
+    position: relative;
+    padding: 0px 30px 0px 30px;
+    top: 153px;
+    right: 154px;
+}
+
+.boost-item{
+    position: relative;
+    padding: 0px 30px 0px 30px;
+    width: 161px;
+    top: 130px;
+    left: 196px;
+
 }
 
 /* profile side this way */
@@ -131,6 +184,11 @@ html {
     .prof-buttons{
         margin-left: 40px;
     }
+    .post-holder{
+        width: 100%;
+    }
+
+    
 }
 
 @media screen and (max-width: 1030px){
@@ -140,10 +198,33 @@ html {
     .prof-buttons{
         margin-left: 30px;
     }
+
+    .post-holder{
+        width: 100%;
+    }
+
+    .name-item{
+        padding: 20px 30px 0px 30px;
+        top: 20px;
+        right: 126px;
+    }
     
+    .categ-item{
+        top: 20px;
+        right: 125px;
+    }
+    
+    .time-item{
+        right: 126px;
+    }
+
+    .boost-item{
+        left: 193px;
+    
+    }
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 991px){
     .content-container{
         width: 70%;
     }
@@ -152,7 +233,33 @@ html {
     }
 
     .post-placeholder{
-        width: 90%;
+        width: 100%;
+    }
+
+    .name-item{
+        font-size: 20px;
+        padding: 20px 30px 0px 30px;
+        right: 90px;
+    }
+    
+    .categ-item{
+        font-size: 18px;
+        padding: 0px 30px 0px 30px;
+        right: 50%;
+    }
+    
+    .time-item{
+        font-size: 13px;
+        padding: 0px 30px 0px 30px;
+        top: 168px;
+        right: 85px;
+    }
+
+    .boost-item{
+        font-size: 13px;
+        top: 149px;
+        left: 131px;
+    
     }
 }
 
@@ -166,6 +273,31 @@ html {
         border-bottom: none;
         
     }
+    .name-item{
+        font-size: 25px;
+        padding: 30px 30px 0px 30px;
+        right: 135px;
+    }
+    
+    .categ-item{
+        font-size: 18px;
+        padding: 0px 30px 0px 30px;
+        right: 65%;
+    }
+    
+    .time-item{
+        font-size: 15px;
+        padding: 0px 30px 0px 30px;
+        top: 130px;
+        right: 130px;
+    }
+    
+    .boost-item{
+        font-size: 15px;
+        top: 110px;
+        left: 200px;
+    
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -174,5 +306,60 @@ html {
     }
     .profile-side{
         order: 1;
+    }
+
+    .name-item{
+        font-size: 20px;
+        padding: 20px 30px 0px 30px;
+        right: 114px;
+    }
+    
+    .categ-item{
+        font-size: 18px;
+        padding: 0px 30px 0px 30px;
+        right: 113px;
+    }
+    
+    .time-item{
+        font-size: 13px;
+        padding: 0px 30px 0px 30px;
+        top: 170px;
+        right: 118px;
+    }
+
+    .boost-item{
+        font-size: 13px;
+        top: 148px;
+        left: 166px;
+    
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .name-item{
+        font-size: 20px;
+        padding: 20px 30px 0px 30px;
+        right: 90px;
+    }
+    
+    .categ-item{
+        font-size: 18px;
+        padding: 0px 30px 0px 30px;
+        right: 50%;
+    }
+    
+    .time-item{
+        font-size: 13px;
+        padding: 0px 30px 0px 30px;
+        top: 170px;
+        right: 90px;
+    }
+
+    .boost-item{
+        font-size: 13px;
+        top: 150px;
+        left: 171px;
+        padding: 0px;
+        width: 77px;
     }
 }

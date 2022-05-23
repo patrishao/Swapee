@@ -43,8 +43,6 @@
 
             <div class="chat-list">
 
-
-
                 <div class="specific-chat">
                     <div class="specific-user">
 
@@ -91,7 +89,6 @@
 
 
             <div class="chatbox">
-
 
                 <div class="user">
                     <img class="user-img" src="images\gabby.jpeg">

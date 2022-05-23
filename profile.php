@@ -27,17 +27,39 @@
       <!-- left side -->
         <div class="col-md-6 order-lg-1 order-md-1 order-sm-2 post-side">
           <div class="post-holder"> 
-          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
-                <div class="name-item">Snake Plant</div>
-                <div class="categ-item">Others</div>
-                <div class="time-item">Monday, April 11</div>
-                <div class="boost-item">Boost Post</div>
+          
+            <img src="images\home\item-placeholder.png" alt="" class="post-placeholder">
+                    <div class="information-item">
+                          <div class="name-item">Snake Plant</div>
+                          <div class="categ-item">Others</div>
+                          <div class="time-item"> 
+                            <img src="images\icons\icon-park-outline_time.png" alt=""> 
+                            Monday, April 11</div>
+                          <div class="boost-item">↗Boost Post</div>
+                    </div>
+              </div>
+            <div class="post-holder"> 
+                    <img src="images\home\item-placeholder.png" alt="" class="post-placeholder">
+                      <div class="information-item">
+                                <div class="name-item">Snake Plant</div>
+                                <div class="categ-item">Others</div>
+                                <div class="time-item"> 
+                            <img src="images\icons\icon-park-outline_time.png" alt=""> 
+                            Monday, April 11</div>
+                                <div class="boost-item">↗Boost Post</div>
+                          </div>
+                
             </div>
             <div class="post-holder"> 
-                <img src="images\placeholder.jpg" alt="" class="post-placeholder">
-            </div>
-            <div class="post-holder"> 
-                <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+                <img src="images\home\item-placeholder.png" alt="" class="post-placeholder">
+                <div class="information-item">
+                          <div class="name-item">Snake Plant</div>
+                          <div class="categ-item">Others</div>
+                          <div class="time-item"> 
+                            <img src="images\icons\icon-park-outline_time.png" alt="">
+                            Monday, April 11</div>
+                          <div class="boost-item">↗Boost Post</div>
+                    </div>
             </div>
         </div>
 
@@ -63,7 +85,7 @@
                 <p class="rating-details">5/5</p></div>
 
                 <div class="prof-buttons">
-                  <img src="images\icons\ci_settings.png" alt="">
+                  <a href="edit-profile.php"><img src="images\icons\ci_settings.png" alt=""></a>
                   <img src="images\icons\akar-icons_plus.png" alt="">
                 </div>
               </div>
