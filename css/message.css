@@ -5,19 +5,13 @@
 
 
 html{
-font-size: 15px;
+    font-size: 15px;
+    font-family: 'Inter';
+    font-style: normal;
 }
 
-body{
-    background-color: #393939;
-    color: white;
-    font-family: Nunito;
-}
 
 .container{
-
-    background-color: #434343;
-    border: solid 1px #151515;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -28,6 +22,8 @@ body{
 }
 
 .contents{
+    border: solid 1px;
+    border-radius: 20px;
     display: flex;
     flex-direction: row;
 }
@@ -42,6 +38,10 @@ justify-content: space-between;
     float: left;
 }
 
+.specific-chat-clickable{
+    display: none;
+}
+
 /* usernames */
 
 .title{
@@ -50,27 +50,23 @@ justify-content: space-between;
 }
 
 .chatbox{
-
     width: 80%;
     float: right;
-    background-color: #323232;
-    border-radius: 1em;
+    border-left: solid 1px;
    
 }
 
 .user{
-    background-color: #2C2C2C;
-    padding: 2em;
-    border-radius: 1em;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-bottom: solid 1px;
     display: flex;
     flex-direction: row;
 
 }
 
 .user-img{
-    width: 6em;
-    height: 6em;
+    width: 7%;
+    height: 7%;
     object-fit: cover;
     border-radius: 100%;
     margin-right: 0.5em;
@@ -82,15 +78,10 @@ justify-content: space-between;
 }
 
 .name-msg{
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
-.username-msg{
-    margin-top: 0;
-    font-weight: 100;
-   
-}
 
 /* chatbox */
 
@@ -110,6 +101,7 @@ justify-content: space-between;
 }
 
 .chatter-img{
+    padding-top: 20px;
     width: 4.5em;
     height: 4.5em;
     object-fit: cover;
@@ -117,27 +109,36 @@ justify-content: space-between;
 }
 
 .chat-text{
-    background-color: #161616;
+    background-color: #C4C4C4;
     padding: 1.3em;
     width: 40%;
     margin-left: 1em;
-    border-radius: 0.7em;
+    border-radius: 20px 20px 20px 0px;
     display: block;
 }
 
 .replier{
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
- 
+}
 
-
+.replier-img{
+    order: 2;
+    margin-left: 10px;
+    padding-top: 20px;
+    width: 4.5em;
+    height: 4.5em;
+    object-fit: cover;
+    border-radius: 100%;
 }
 
 .replier-text{
-    background-color: #975656;
+    background-color: #5CACA9;
     color: white;
     padding: 1.3em;
     margin-left: 1em;
-    border-radius: 0.7em;
+    border-radius: 20px 20px 0px 20px;
     display: block;
     width: 50%;
     float: right;
@@ -169,17 +170,15 @@ justify-content: space-between;
 /* form */
 
 form{
-    
     position: relative;
     display: flex;
     flex-direction: row;
-    background-color: #2C2C2C;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 2em;
     border-radius: 1em;
 }
 
 form button{
+    color: #5CACA9;
     background-color: transparent;
     border: none;
   
@@ -188,7 +187,6 @@ form button{
 .txt-msg{
     width: 80%;
     height: 3vh;
-    background: #CACACA;
     border: 1px solid #8b8b8b;
     border-radius: 2em;
     resize: none;
@@ -221,8 +219,8 @@ form button{
 }
 
 .user-img1{
-    width: 2.5em;
-    height: 2.5em;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 100%;
     /* margin-right: 0.5em; */
@@ -230,7 +228,6 @@ form button{
 }
 
 .specific-chat{
-    background-color: #323232;
     height: fit-content;
     padding: 1em 2em;
     border-radius: 1em;
@@ -251,7 +248,7 @@ form button{
     margin-left: 0.5em;
 }
 
-.username-post1{
+.msg-post1{
     font-size: 0.8rem;
     margin-top: 0;
     font-weight: 300;
@@ -274,6 +271,7 @@ form button{
 .specific-user{
     display: flex;
     justify-content: space-between;
+    color: black;
 }
 
 .time p{
@@ -287,63 +285,32 @@ form button{
 /* media queries */
 
 @media (max-width:62em) {
-
- 
-    .specific-chat{
-        background: none;
-        padding: 0;
+    .contents{
+        width: 100%;
+        border: none;
     }
-
-    .names1, .time, .comment-text{
-        display: none;
-    }
-
-    .user-img1{
-        width: 5.3em;
-        height: 5.3em;
-    }
-
     .chat-list{
-        width: 15%;
+        width: 100%;
     }
+    .specific-chat{
+       display: none;
+    }
+    .specific-chat-clickable{
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+    }
+    .specific-user{
+        width: 100%;
+    }
+    
 
     .chatbox{
         width: 100%;
+        display: none;
     }
 
-    .user-img{
-        width: 5em;
-        height: 5em;
-    }
-
-    .container{
-        width: 90%;
-        background-color: transparent;
-        border: none;
-    }
-    .title{
-        font-size: 3rem;
-    }
-
-    .txt-msg{
-        height: 1vh;
-        padding: 1.5em 1.5em;
-    }
-
-    .buttons > button{
-        margin-right: 0%;
-        padding: 0;
-    }
-
-    .img-btn svg, .gif-btn svg{
-        width: 25px;
-        height: 25px;
-
-    }
-
-    html{
-        font-size: 13px;
-    }
+    
 }
 
 @media (max-width: 41.75em) {
