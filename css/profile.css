@@ -12,8 +12,14 @@ html {
     padding-top: 60px;
 }
 
+.post-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .post-placeholder{
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 20px;
 }

@@ -26,9 +26,16 @@
 
       <!-- left side -->
         <div class="col-md-6 order-lg-1 order-md-1 order-sm-2 post-side">
-          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
-          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
-          <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+          <div class="post-holder"> 
+                <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+                </div>
+            </div>
+            <div class="post-holder"> 
+                <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+            </div>
+            <div class="post-holder"> 
+                <img src="images\placeholder.jpg" alt="" class="post-placeholder">
+            </div>
         </div>
 
       <!-- right side (profile)-->
