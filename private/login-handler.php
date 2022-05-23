@@ -39,10 +39,13 @@ if (isset($_POST['login'])) {
                 $db_profile_pic = $row['profile_pic'];
                 $db_rating = $row['rating'];
                 $db_username = $row['username'];
+                $db_location = $row['location'];
             }
 
             // checking if the hashed password matches the given password
             if (password_verify($password, $db_password)) {
+
+                session_start();
 
                 // assigning a session so it can be pulled later
                 $_SESSION['userID'] = $db_id;
@@ -53,6 +56,8 @@ if (isset($_POST['login'])) {
                 $_SESSION['bio'] =  $db_bio;
                 $_SESSION['profPic'] = $db_profile_pic;
                 $_SESSION['rating'] = $db_rating;
+                $_SESSION['location'] = $location;
+
 
 
                 // sending a data that the user is logged in

@@ -14,15 +14,13 @@
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- css -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
 
-    <nav> NAVBAR</nav>
 
-
-
+    <?php include_once 'navbar.php' ?>
 
     <?php
 
@@ -48,14 +46,14 @@
                         <?php
 
 
-                                                                                        // displaying the category title based on the data obtained in the link
-                                                                                        if (strpos($categoryName, $allItem) !== false) {
-                                                                                            echo "All items";
-                                                                                        } else {
-                                                                                            echo $categoryName;
-                                                                                        }
+                        // displaying the category title based on the data obtained in the link
+                        if (strpos($categoryName, $allItem) !== false) {
+                            echo "All items";
+                        } else {
+                            echo $categoryName;
+                        }
 
-                                                                                        ?>
+                        ?>
                     </span></p>
 
             </div>
@@ -65,32 +63,33 @@
 
         </div>
 
-        <div class="top-ad text-center m-5 ">
+        <div class="top-ad text-center m-4 m-lg-5  ">
 
-            <img src="images/home/top-ad.png" alt="" class="">
+            <img src="images/home/ad2.png" alt="" class="">
 
         </div>
 
 
-        <div class="container d-flex  ">
+        <div class="container d-flex">
 
             <!-- main contents -->
 
             <div class="d-flex flex-column flex-lg-row">
 
-                <div class="aside">
+                <div class="aside ps-3 pe-3 ps-lg-0 pe-lg-0 ">
 
                     <!-- show dropdown for smaller screens -->
-                    <div class="sm-dropdown d-md-none">
-                        <div class="dropdown">
+                    <div class="sm-dropdown d-md-none mt-3 mb-2 ">
+                        <div class="dropdown ">
 
                             <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-expanded="false">
                                 Categories
                             </a>
 
-                            <ul class="dropdown-menu  " aria-labelledby="dropdownMenuLink">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <h5 class="d-none">Categories</h5>
+                                <li><a href=" index-categ.php?categ=all-items">Featured Items</a> </li>
                                 <li><a href=" index-categ.php?categ=all-items">All items </a> </li>
                                 <li> <a href="index-categ.php?categ=self-care">Self-care</a> </li>
                                 <li><a href="index-categ.php?categ=beauty">Beauty</a> </li>
@@ -118,7 +117,7 @@
                                     Sort by
                                 </a>
                                 <ul class="dropdown-menu  " aria-labelledby="dropdownMenuLink">
-                                    <h5>Sort by</h5>
+
                                     <li> <a href="">Offered</a></li>
                                     <li>
 
@@ -134,11 +133,13 @@
 
 
                     <!-- if larger screens, show this  -->
-                    <div class="lg-dropdown d-md-block d-none">
-                        <div class="aside ">
+                    <div class="lg-dropdown d-md-block d-none ">
+
+                        <div class="aside  ">
 
                             <div class="categories">
                                 <h5>Categories</h5>
+                                <a href="index-categ.php?categ=self-care">Featured</a>
                                 <a href="index-categ.php?categ=all-items">All items </a>
                                 <a href="index-categ.php?categ=self-care">Self-care</a>
                                 <a href="index-categ.php?categ=beauty">Beauty</a>
@@ -170,77 +171,76 @@
                 </div>
 
 
-                <div class="main w-100">
+                <div class="main w-100 ps-3 pe-3 ps-lg-0 pe-lg-0">
 
-                    <h2 class="mb-3 featured-title">Featured Items</h2>
+                    <p class="mb-1 mb-lg-2 featured-title2 mt-3 mt-lg-3">All | <span class="page-count"> 1 of 1</span>
+                    </p>
 
 
                     <!-- USE GRID -->
                     <div class="all-items container">
 
 
-                        <div class="row row-cols-md-3 row-cols-1">
 
-                            <div class="item2 col ">
-                                <img src="images/home/item-placeholder.png" alt="">
 
-                                <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-offered">offered</span></p>
-                                </div>
-                            </div>
+                        <div class="row row-cols-md-3 row-cols-1 ps-1 pe-1 ps-lg-0 pe-lg-0 w-100 ">
 
-                            <div class="item2 col ">
-                                <img src="images/home/item-placeholder.png" alt="">
+                            <?php
 
-                                <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-offered">offered</span></p>
-                                </div>
-                            </div>
+                            require_once('private/includes/connection.php');
+                            require_once('private/includes/functions.php');
 
-                            <div class="item2 col">
-                                <img src="images/home/item-placeholder.png" alt="">
+                            if ($categoryName ==  $allItem) {
 
-                                <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
-                                </div>
-                            </div>
+                                $getPostbyCategoryQuery = "SELECT * FROM posts ORDER BY isFeatured = true";
+                            } else {
+                                $getPostbyCategoryQuery = "SELECT * FROM posts WHERE category = '$categoryName' ORDER BY isFeatured = true";
+                            }
 
-                            <div class="item2 col">
-                                <img src="images/home/item-placeholder.png" alt="">
+                            $getPostResult = mysqli_query($connection, $getPostbyCategoryQuery);
 
-                                <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
-                                </div>
-                            </div>
+                            while ($row = mysqli_fetch_assoc($getPostResult)) {
 
-                            <div class="item2 col">
-                                <img src="images/home/item-placeholder.png" alt="">
+
+                                $post_id = $row['post_id'];
+                                $title = $row['title'];
+                                $category = ucfirst($row['category']);
+                                $status = $row['status'];
+                                $cover_img = $row['cover-img'];
+
+
+                            ?>
+
+
+
+                            <div class="item2 col  ">
+                                <img src="images/uploaded-imgs/<?php echo $cover_img ?>" alt="">
+
 
                                 <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
+                                    <p class="item-categ"><?php echo $category ?></p>
+                                    <p class="item-name"><?php echo $title ?></p>
+                                    <p class="">Status: <span
+                                            class="item-status <?php echo checkItemisOffered($status) ?> "><?php echo ucfirst($status) ?></span>
+                                    </p>
                                 </div>
                             </div>
 
 
-                            <div class="item2 col">
-                                <img src="images/home/item-placeholder.png" alt="">
 
-                                <div class="item-details mt-3">
-                                    <p class="item-categ">Books</p>
-                                    <p class="item-name">Books of Romains</p>
-                                    <p class="">Status: <span class="item-status status-wanted">wanted</span></p>
-                                </div>
-                            </div>
+
+
+
+
+                            <?php }
+
+                            ?>
+
+
+
+
+
+
                         </div>
 
 
@@ -253,10 +253,11 @@
 
 
 
-                    <div class="pages ">
+                    <div
+                        class="pages d-flex align-content-center justify-content-center  align-items-center justify-items-center">
 
                         <div class="container d-flex align-content-center justify-content-center ">
-                            <nav aria-label="Page navigation ">
+                            <div aria-label="page navigation ">
                                 <ul class="pagination">
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Previous">
@@ -274,7 +275,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </div>
                         </div>
 
                     </div>
@@ -289,7 +290,7 @@
         </div>
 
 
-        <div class="bot-ad text-center m-5 ">
+        <div class="bot-ad text-center m-1 m-lg-5 ">
             <img src=" images/home/ad2.png" />
         </div>
 
@@ -298,13 +299,13 @@
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-            </script>
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-            </script>
+        </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-            </script>
+        </script>
 
 
         <script src="js/index.js"></script>

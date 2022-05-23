@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     font-family: 'Inter', sans-serif;
 }
@@ -88,6 +89,18 @@ h4 {
     width: 100%;
 }
 
+textarea {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #9D9D9D;
+    padding: 0px 0px 3px 0px;
+    width: 100%;
+    resize: none;
+}
+
+
+
 .editprof-group label:hover {
     color: black;
 }
@@ -143,6 +156,7 @@ h4 {
         width: 100%;
         justify-content: center;
     }
+
     .acc-details img {
         display: block;
     }
