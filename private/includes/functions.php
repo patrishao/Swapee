@@ -37,3 +37,13 @@ function checkIfValueExist($connection, $field, $data)
         return false;
     }
 }
+
+function checkItemisOffered($status)
+{
+
+    if (strcmp($status, "offered")) {
+        return "status-offered";
+    } else {
+        return "status-wanted";
+    }
+}
