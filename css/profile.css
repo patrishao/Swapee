@@ -1,100 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-*  */
 
-html {
+* */ html {
     margin: 0px !important;
 }
-img{
+
+img {
     margin: 0;
 
 }
-.post-side{
+
+.post-side {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 60px;
 }
 
-.post-holder{
+.post-holder {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 80%;
     height: 300px;
     margin-bottom: 30px;
     border-radius: 10px;
-    box-shadow: 0px 24px 81px 0px rgba(0,0,0,0.75) inset;
+    box-shadow: 0px 24px 81px 0px rgba(0, 0, 0, 0.75) inset;
     border: none;
     overflow: hidden;
+    position: relative;
 }
-.post-placeholder{
+
+
+
+.post-placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     z-index: -1;
 }
 
-.information-item{
+.information-item {
+
     position: absolute;
     color: white;
+    left: 0;
+    width: 90%;
 }
 
-.name-item{
+
+.name-item {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
-    line-height: 30px;
-    position: relative;
-    padding: 30px 30px 0px 30px;
-    right: 157px;
+    font-size: 20px;
+    width: 80%;
+
+
+
+
 }
 
-.categ-item{
+.categ-item {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 24px;
-    position: relative;
-    padding: 0px 30px 0px 30px;
-    right: 153px;
-}
 
-.time-item{
-    position: relative;
-    padding: 0px 30px 0px 30px;
-    top: 153px;
-    right: 154px;
-}
 
-.boost-item{
-    position: relative;
-    padding: 0px 30px 0px 30px;
-    width: 161px;
-    top: 130px;
-    left: 196px;
 
 }
+
+.time-item {}
+
+
+
+
+.info-container {
+    position: absolute;
+    bottom: 3%;
+    color: white;
+    left: 0;
+    width: 90%;
+}
+
+
+
+.boost-item {
+    font-weight: 600;
+}
+
+
+
 
 /* profile side this way */
-.profile-side{
+.profile-side {
     display: flex;
     justify-content: center;
 }
-.content-container{
+
+.content-container {
     display: flex;
     width: 50%;
     flex-direction: column;
     margin-top: 70px;
 }
 
-.container-firstpt{
+.container-firstpt {
     display: flex;
     margin-bottom: 20px;
 }
 
-.name{
+.name {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -103,7 +118,7 @@ img{
 
 }
 
-.username{
+.username {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -111,32 +126,32 @@ img{
     line-height: 18px;
 }
 
-.name-user{
+.name-user {
     width: 100%;
     margin-left: 13px;
     padding-top: 10px;
 }
 
-.profile-pic{
+.profile-pic {
     height: 95px;
     width: 95px;
     border-radius: 100px;
 }
 
-.bio{
+.bio {
     margin-bottom: 10px;
     border-bottom: solid 1px rgb(187, 183, 183);
     padding-bottom: 10px;
 }
 
-.container-secondpt{
+.container-secondpt {
     display: flex;
     height: 20px;
 }
 
 
 
-.location-details{
+.location-details {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -147,23 +162,23 @@ img{
     margin-left: 10px;
 }
 
-.location{
+.location {
     display: flex;
     width: 40%;
 }
 
-.rating{
+.rating {
     display: flex;
     width: 60px;
     margin-left: 10px;
 }
 
-.rating-img{
-    height:80%;
+.rating-img {
+    height: 80%;
 }
 
 
-.rating-details{
+.rating-details {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -174,192 +189,189 @@ img{
     margin-left: 7px;
 }
 
-.prof-buttons{
+.prof-buttons {
     margin-left: 70px;
     margin-top: -6px;
 }
 
 
-@media screen and (max-width: 1399px){
-    .prof-buttons{
+/* featured */
+
+.featured-container {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 1399px) {
+    .prof-buttons {
         margin-left: 40px;
     }
-    .post-holder{
+
+    .post-holder {
         width: 100%;
     }
 
-    
+
 }
 
-@media screen and (max-width: 1030px){
-    .content-container{
+@media screen and (max-width: 1030px) {
+    .content-container {
         width: 55%;
     }
-    .prof-buttons{
+
+    .prof-buttons {
         margin-left: 30px;
     }
 
-    .post-holder{
+    .post-holder {
         width: 100%;
     }
 
-    .name-item{
-        padding: 20px 30px 0px 30px;
+    .name-item {}
+
+    .categ-item {
         top: 20px;
-        right: 126px;
-    }
-    
-    .categ-item{
-        top: 20px;
-        right: 125px;
-    }
-    
-    .time-item{
-        right: 126px;
+
     }
 
-    .boost-item{
-        left: 193px;
-    
-    }
+    .time-item {}
+
+
 }
 
-@media screen and (max-width: 991px){
-    .content-container{
+@media screen and (max-width: 991px) {
+    .content-container {
         width: 70%;
     }
-    .prof-buttons{
+
+    .prof-buttons {
         margin-left: 20px;
     }
 
-    .post-placeholder{
+    .post-placeholder {
         width: 100%;
     }
 
-    .name-item{
+    .name-item {
         font-size: 20px;
-        padding: 20px 30px 0px 30px;
-        right: 90px;
-    }
-    
-    .categ-item{
-        font-size: 18px;
-        padding: 0px 30px 0px 30px;
-        right: 50%;
-    }
-    
-    .time-item{
-        font-size: 13px;
-        padding: 0px 30px 0px 30px;
-        top: 168px;
-        right: 85px;
+
+
     }
 
-    .boost-item{
+    .categ-item {
+        font-size: 18px;
+
+
+    }
+
+    .time-item {
         font-size: 13px;
-        top: 149px;
-        left: 131px;
-    
+
+
+    }
+
+    .boost-item {
+        font-size: 13px;
+
+
     }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
 
-    .prof-buttons{
+    .prof-buttons {
         margin-left: 100px;
     }
 
-    .bio{
+    .bio {
         border-bottom: none;
-        
+
     }
-    .name-item{
+
+    .name-item {
         font-size: 25px;
-        padding: 30px 30px 0px 30px;
-        right: 135px;
+
     }
-    
-    .categ-item{
+
+    .categ-item {
         font-size: 18px;
-        padding: 0px 30px 0px 30px;
-        right: 65%;
+
     }
-    
-    .time-item{
+
+    .time-item {
         font-size: 15px;
-        padding: 0px 30px 0px 30px;
-        top: 130px;
-        right: 130px;
+
     }
-    
-    .boost-item{
+
+    .boost-item {
         font-size: 15px;
-        top: 110px;
-        left: 200px;
-    
+
     }
+
 }
 
 @media screen and (max-width: 576px) {
-    .post-side{
+    .post-side {
         order: 2;
     }
-    .profile-side{
+
+    .profile-side {
         order: 1;
     }
 
-    .name-item{
+    .name-item {
         font-size: 20px;
-        padding: 20px 30px 0px 30px;
+
         right: 114px;
     }
-    
-    .categ-item{
+
+    .categ-item {
         font-size: 18px;
-        padding: 0px 30px 0px 30px;
-        right: 113px;
-    }
-    
-    .time-item{
-        font-size: 13px;
-        padding: 0px 30px 0px 30px;
-        top: 170px;
-        right: 118px;
+
+
     }
 
-    .boost-item{
+    .time-item {
         font-size: 13px;
-        top: 148px;
-        left: 166px;
-    
+
+
+    }
+
+    .boost-item {
+        font-size: 13px;
+
+
     }
 }
 
 @media screen and (max-width: 414px) {
-    .name-item{
+    .name-item {
         font-size: 20px;
-        padding: 20px 30px 0px 30px;
-        right: 90px;
-    }
-    
-    .categ-item{
-        font-size: 18px;
-        padding: 0px 30px 0px 30px;
-        right: 50%;
-    }
-    
-    .time-item{
-        font-size: 13px;
-        padding: 0px 30px 0px 30px;
-        top: 170px;
-        right: 90px;
+
+
     }
 
-    .boost-item{
+    .categ-item {
+        font-size: 18px;
+
+
+    }
+
+    .time-item {
         font-size: 13px;
-        top: 150px;
-        left: 171px;
-        padding: 0px;
-        width: 77px;
+
+
+    }
+
+    .boost-item {
+        font-size: 13px;
+
     }
 }
