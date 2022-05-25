@@ -37,7 +37,14 @@ require_once('private/includes/current-user-details.php');
 
 
             <div class="acc-details">
-                <img src="images/pfp-ph.png" class="edit-pic" alt="" srcset="">
+                <div class="prof-pic">
+                    <img src="images/pfp-ph.png" class="edit-pic" alt="" srcset="">
+                    <div class="edit-pic-overlay">
+                        <input type="file" id="file">
+                        <label for="file"><img src="images/icons/upload-pic.png" class="edit-pic-upload" alt="" srcset=""></label>
+                    </div>
+                </div>
+
                 <div class="usernames">
                     <p class="username1"><?php echo $firstName . " " . $lastName ?><br></p>
                     <p class="username2"><?php echo $username ?>r</p>
@@ -45,7 +52,6 @@ require_once('private/includes/current-user-details.php');
             </div>
 
             <div class="acc-settings">
-
                 <form class="pass-form" action="profile.php" method="POST">
 
                     <div class="editprof-group">
@@ -60,12 +66,34 @@ require_once('private/includes/current-user-details.php');
 
                     <div class="editprof-group">
                         <label for="bio">BIO</label> <br>
-                        <textarea name="bio"><?php echo $bio ?></textarea><br><br>
+                        <textarea name="bio" rows="1"><?php echo $bio ?></textarea><br><br>
                     </div>
 
                     <div class="editprof-group">
                         <label for="location">LOCATION</label> <br>
-                        <input type="text" name="loc"><?php echo $location; ?><br><br>
+                        <input type="text" name="loc1"><?php echo $location; ?><br><br>
+                        <!-- <div class="editprof-location">
+                            <select name="loc" id="loc">
+                                <option value=""></option>
+                                <option value="auh">Abu Dhabi</option>
+                                <option value="dxb">Dubai</option>
+                                <option value="shj">Sharjah</option>
+                                <option value="ajm">Ajman</option>
+                                <option value="auq">Umm Al-Quwain</option>
+                                <option value="fuj">Fujairah</option>
+                                <option value="rak">Ras Al Khaimah</option>
+                            </select>
+                        </div> -->
+                    </div>
+
+                    <div class="editprof-group">
+                        <label for="ch-password">CHANGE PASSWORD</label> <br>
+                        <input type="password" name="pass" value=""> <br><br>
+                    </div>
+
+                    <div class="editprof-group">
+                        <label for="co-password">CONFIRM PASSWORD</label> <br>
+                        <input type="password" name="pass2" value=""> <br><br>
                     </div>
 
                     <div class="buttons">
@@ -76,7 +104,6 @@ require_once('private/includes/current-user-details.php');
                 </form>
 
                 <br>
-
             </div>
         </div>
 

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 * {
     font-family: 'Inter', sans-serif;
 }
@@ -44,6 +43,7 @@ h4 {
     display: flex;
     position: relative;
     width: 100%;
+    padding-bottom: 13px;
 }
 
 .usernames {
@@ -69,9 +69,26 @@ h4 {
 }
 
 .edit-pic {
-    height: 129px;
-    width: 129px;
+    width: 100%;
     border-radius: 50%;
+    display: block;
+}
+
+.prof-pic {
+    position: relative;
+    width: 129px;
+}
+
+.edit-pic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#file {
+    display: none;
 }
 
 .editprof-group label {
@@ -100,6 +117,20 @@ textarea {
 }
 
 
+/* 
+.editprof-location {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #9D9D9D;
+    padding: 2.5px 0px 3px 0px;
+    width: 100%;
+} */
+
+.editprof-location select {
+    width: 100%;
+    outline: none;
+}
 
 .editprof-group label:hover {
     color: black;
@@ -119,6 +150,7 @@ textarea {
     height: 43px;
     border-radius: 15px;
     border: 1px solid #2C2C2C;
+    color: #5CACA9;
     transition: 0.3s;
 }
 
@@ -127,7 +159,7 @@ textarea {
 }
 
 .cancel a:hover {
-    color: #5CACA9;
+    color: black;
     background-color: white;
 }
 
@@ -156,7 +188,6 @@ textarea {
         width: 100%;
         justify-content: center;
     }
-
     .acc-details img {
         display: block;
     }
