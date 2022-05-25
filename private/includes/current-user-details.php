@@ -1,5 +1,6 @@
 <?php
 
+
 // storing the sessions to a variable for easier call
 session_start();
 
