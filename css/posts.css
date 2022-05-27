@@ -28,6 +28,7 @@
     position: relative;
     display: flex;
     margin: auto;
+    height: 100%;
     width: 80%;
     margin-top: 5px;
     border: 1px solid #8A8A8A;
@@ -62,10 +63,10 @@
     position: relative;
     display: flex;
     width: 100%;
-    padding: 80px;
     margin: 0;
     left: 0;
     animation: 20s slider infinite;
+    padding: 80px;
 }
 
 .pic-container .pic-main img {

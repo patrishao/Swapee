@@ -38,6 +38,7 @@
                     <img src="images/uploaded-imgs/detergentessentials.png">
                     <img src="images/uploaded-imgs/detergentessentials.png">
                     <img src="images/uploaded-imgs/detergentessentials.png">
+                    <img src="images/uploaded-imgs/detergentessentials.png">
                 </figure>
             </div>
 
