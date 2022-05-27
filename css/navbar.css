@@ -30,7 +30,7 @@ nav ul li a {
     padding: 10px;
 }
 
-a:hover {
+.a:hover {
     background: #FEB005;
     color: white;
     border-radius: 10px;

@@ -25,10 +25,10 @@
 
         <!-- navbar menu -->
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Messages</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a class="a" href="index.php">Home</a></li>
+            <li><a class="a" href="#">Notifications</a></li>
+            <li><a class="a" href="#">Messages</a></li>
+            <li><a class="a" href="profile.php">Profile</a></li>
         </ul>
 
         <label for="check" class="bar">
