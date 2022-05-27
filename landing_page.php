@@ -154,7 +154,7 @@
 
                 <!-- bianca -->
                 <div class="member">
-                    <div class="profile"><img src="images/carterino.jpeg" alt="" srcset=""></div>
+                    <div class="profile"><img src="images/biancs.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Bianca Dalangin</h6>
                         <p>Web Designer</p>
