@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
     font-family: 'Inter';
 }
@@ -131,6 +132,28 @@ html {
     font-weight: 500;
 }
 
+.pass-container {
+    position: relative;
+}
+
+.togglePass {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+
+    transform: translate(-50%, -100%);
+}
+
+/* alert */
+
+.alert {
+    text-align: center;
+
+    margin: 1.5em 1em;
+    border-radius: 0;
+    width: 100%;
+}
+
 @media screen and (max-width: 920px) {
     .login-face-con img {
         object-fit: fill;
@@ -141,6 +164,7 @@ html {
     .login-face-con {
         display: none;
     }
+
     /* .logo {
         display: block;
         margin: 0%;
@@ -155,26 +179,33 @@ html {
         border-bottom-left-radius: 200px;
         background-color: #FEB005;
     }
+
     .login-title {
         color: white;
     }
+
     .forgot-p {
         color: black;
     }
+
     .forgot-p:hover {
         color: white;
     }
+
     .text-login a:hover {
         color: white;
     }
+
     .btn-login {
         background-color: #ffffff;
         color: #FEB005;
     }
+
     .btn-login:hover {
         background-color: #ffca57;
         color: white;
     }
+
     input {
         border: none;
         outline: #FEB005;
