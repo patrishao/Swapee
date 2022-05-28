@@ -31,18 +31,11 @@
     </div>
 
     <div class="main-container">
-
-
         <!-- CHANGES BY CHAY -->
 
-
         <div class="pic-holder ps-4 pe-4">
-
-
-
-
             <div class="prev-arrow arrow">
-                <button>left</button>
+                <button><img src="images/icons/back-icon-big.svg" alt=""></button>
             </div>
 
             <div class="container photo-container p-5">
@@ -51,12 +44,11 @@
             </div>
 
             <div class="right-arrow arrow">
-                <button>right</button>
+                <button><img src="images/icons/forward-icon.svg" alt=""></button>
             </div>
         </div>
 
-
-
+        <div class = "vertical"></div>
 
         <div class="posts-container ">
 
