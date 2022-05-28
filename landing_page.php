@@ -118,7 +118,7 @@
             <div class="team">
                 <!-- patrisha -->
                 <div class="member">
-                    <div class="profile"><img src="images/carterino.jpeg" alt="" srcset=""></div>
+                    <div class="profile"><img src="images/pat.jpeg" alt="" srcset=""></div>
                     <div id="description">
                         <h6>Patrisha Ortigas</h6>
                         <p>Backend Developer</p>
