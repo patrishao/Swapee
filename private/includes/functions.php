@@ -47,3 +47,69 @@ function checkItemisOffered($status)
         return "status-wanted";
     }
 }
+
+
+function getFirstLastName($connection, $id)
+{
+    $getDetailsQuery =  mysqli_query($connection, "SELECT * from users WHERE user_id = '$id'");
+
+    $row = mysqli_fetch_assoc($getDetailsQuery);
+    $firstName = $row['first_name'];
+    $lastName = $row['last_name'];
+
+
+    return $firstName . " " . $lastName;
+}
+
+
+function getUserImg($connection, $id)
+{
+    $getDetailsQuery =  mysqli_query($connection, "SELECT * from users WHERE user_id = '$id'");
+
+    $row = mysqli_fetch_assoc($getDetailsQuery);
+    $userProfImg = $row['profile_pic'];
+
+
+
+    return $userProfImg;
+}
+
+
+// getting the most recetn conversation the user had
+function getMostRecentUser($connection, $userLoggedIn)
+{
+    $getMostRecentQuery = mysqli_query($connection, "SELECT user_toID, user_fromID FROM messages WHERE user_toID = '$userLoggedIn' OR user_fromID = '$userLoggedIn' ORDER BY msg_id DESC LIMIT 1");
+
+    if (mysqli_num_rows($getMostRecentQuery) == 0) {
+        return false;
+    }
+
+    // fetching the details
+    $row = mysqli_fetch_array($getMostRecentQuery);
+    $user_to = $row['user_toID'];
+    $user_from = $row['user_fromID'];
+
+
+    // checking who the user last messaged 
+    if ($user_to != $userLoggedIn) {
+        return $user_to;
+    } else {
+        return $user_from;
+    }
+}
+
+
+// getting all convos that  is associated withb the user logged in
+function getLatestMsg($userLoggedIn, $user2, $connection)
+{
+
+
+
+    $getMsgQuery = mysqli_query($connection, "SELECT body, user_toID FROM messages WHERE user_toID = '$userLoggedIn' AND user_fromID = '$user2' OR user_toID = '$user2' AND user_fromID ='$userLoggedIn' ORDER BY msg_id DESC LIMIT 1");
+
+    $row = mysqli_fetch_array($getMsgQuery);
+    $sent_by = $row['user_toID'] == $userLoggedIn ? " " :  "You: ";
+
+
+    return $sent_by . $row['body'];
+}
