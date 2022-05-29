@@ -64,7 +64,7 @@ function getFirstLastName($connection, $id)
 
 function getUserImg($connection, $id)
 {
-    $getDetailsQuery =  mysqli_query($connection, "SELECT * from users WHERE user_id = '$id'");
+    $getDetailsQuery =  mysqli_query($connection, "SELECT profile_pic from users WHERE user_id = '$id'");
 
     $row = mysqli_fetch_assoc($getDetailsQuery);
     $userProfImg = $row['profile_pic'];
@@ -112,4 +112,68 @@ function getLatestMsg($userLoggedIn, $user2, $connection)
 
 
     return $sent_by . $row['body'];
+}
+
+// getting date from latest msgs
+function getDateFromLatestMsg($userLoggedIn, $user2, $connection)
+{
+
+    $getMsgQuery = mysqli_query($connection, "SELECT body, user_toID, date FROM messages WHERE user_toID = '$userLoggedIn' AND user_fromID = '$user2' OR user_toID = '$user2' AND user_fromID ='$userLoggedIn' ORDER BY msg_id DESC LIMIT 1");
+
+    $row = mysqli_fetch_array($getMsgQuery);
+
+
+
+    //Timeframe
+    $date_time_now = date("Y-m-d H:i:s");
+    $start_date = new DateTime($row['date']); //Time of post
+    $end_date = new DateTime($date_time_now); //Current time
+    $interval = $start_date->diff($end_date); //Difference between dates 
+    if ($interval->y >= 1) {
+        if ($interval == 1)
+            $time_message = $interval->y . " y"; //1 year ago
+        else
+            $time_message = $interval->y . " y"; //1+ year ago
+    } else if ($interval->m >= 1) {
+        if ($interval->d == 0) {
+            $days = " ago";
+        } else if ($interval->d == 1) {
+            $days = $interval->d . " d";
+        } else {
+            $days = $interval->d . " d";
+        }
+
+
+        if ($interval->m == 1) {
+            $time_message = $interval->m . "m" . $days;
+        } else {
+            $time_message = $interval->m . "m" . $days;
+        }
+    } else if ($interval->d >= 1) {
+        if ($interval->d == 1) {
+            $time_message = "Yesterday";
+        } else {
+            $time_message = $interval->d . "d";
+        }
+    } else if ($interval->h >= 1) {
+        if ($interval->h == 1) {
+            $time_message = $interval->h . "h";
+        } else {
+            $time_message = $interval->h . "h";
+        }
+    } else if ($interval->i >= 1) {
+        if ($interval->i == 1) {
+            $time_message = $interval->i . "m";
+        } else {
+            $time_message = $interval->i . "m";
+        }
+    } else {
+        if ($interval->s < 30) {
+            $time_message = "Just now";
+        } else {
+            $time_message = $interval->s . "s";
+        }
+    }
+
+    return  $time_message;
 }

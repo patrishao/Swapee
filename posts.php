@@ -31,6 +31,7 @@
     </div>
 
     <div class="main-container">
+        
         <!-- CHANGES BY CHAY -->
 
         <div class="pic-holder ps-4 pe-4">
@@ -48,7 +49,8 @@
             </div>
         </div>
 
-        <div class = "vertical"></div>
+        <!-- middle border -->
+        <div class="vertical"></div>
 
         <div class="posts-container ">
 
@@ -62,7 +64,7 @@
                 <div class="desc-cont">
                     <p class="desc-title">Description</p>
                     <p class="desc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis vehicula
-                        velit. Suspendisse potenti. Ut tempor sem et pellentesque dapibus. </p>
+                        velit. Suspendisse potenti. Ut tempor sem et pellentesque dapibus.</p>
                 </div>
 
                 <div class="seller-cont">

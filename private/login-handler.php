@@ -56,7 +56,7 @@ if (isset($_POST['login'])) {
                 $_SESSION['bio'] =  $db_bio;
                 $_SESSION['profPic'] = $db_profile_pic;
                 $_SESSION['rating'] = $db_rating;
-                $_SESSION['location'] = $location;
+                $_SESSION['location'] = $db_location;
 
 
 
