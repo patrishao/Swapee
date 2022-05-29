@@ -17,17 +17,30 @@
     require_once 'private/includes/functions.php';
     require_once 'private/message-handler.php';
 
-    $isCurrentMsg = false;
+
+    ?>
+
+    <?php
 
 
     ?>
+
 
 
     <!-- TODO: PUT #CHATBOX ON THE LINK -->
     <div class="container">
 
 
-        <?php if ($user_to != "new") { ?>
+        <?php if ($user_to != "new") {
+
+
+
+
+
+        ?>
+
+
+
 
 
         <div class="contents">
@@ -59,8 +72,8 @@
                         $latest_message_details = getLatestMsg($userLoggedIn, $username, $connection);
                         $msgDate = getDateFromLatestMsg($userLoggedIn, $username, $connection);
 
-                        if (strlen($latest_message_details) > 50) {
-                            $lastConvo = substr($latest_message_details, 0, 50) . "...";
+                        if (strlen($latest_message_details) > 35) {
+                            $lastConvo = substr($latest_message_details, 0, 25) . "...";
                         } else {
                             $lastConvo = $latest_message_details;
                         }

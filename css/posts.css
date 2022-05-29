@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
 * {
     font-family: 'Inter', sans-serif;
 }
@@ -73,9 +74,9 @@
 
 .photos {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     border-radius: 10px;
-    /* object-fit: cover; */
+    object-fit: cover;
 }
 
 .arrow {
@@ -99,12 +100,14 @@
 .title-cont {
     border-bottom: 1px solid #8A8A8A;
     padding: 25px 33px 14px 33px;
+
 }
 
 .title-cont .name-of-post {
-    font-size: 35px;
+    font-size: 33px;
     font-family: 'Inter', sans-serif;
     font-weight: 900;
+    line-height: 1.1em;
 }
 
 .title-cont .name-of-post-subtext {
@@ -116,8 +119,7 @@
 .desc-cont {
     border-bottom: 1px solid #8A8A8A;
     padding: 25px 33px 13px 33px;
-    height: 175px;
-    overflow-y: scroll;
+
 }
 
 .desc-cont .desc-title {
@@ -126,31 +128,44 @@
 }
 
 .desc-cont .desc-desc {
-    font-size: 20px;
+    font-size: 18px;
+    text-align: justify;
     margin-top: -18px;
     ;
 }
 
 .seller-cont {
     border-bottom: 1px solid #8A8A8A;
-    padding: 25px 33px 13px 33px;
+    padding: 25px 33px 20px 33px;
 }
 
 .seller-cont .seller-title {
     font-weight: 600;
     font-size: 21px;
+    margin-bottom: 0.5em;
 }
+
+
 
 .seller-cont .seller-desc {
     display: flex;
     flex-direction: row;
+    padding: 0;
+    margin-top: 0;
+    line-height: 0.6em;
+
+}
+
+.seller-desc2 {
+    margin-top: 2%;
 }
 
 .seller-cont .seller-desc2 {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-left: 20px;
+    margin-left: 10px;
+
 }
 
 .seller-cont .seller-desc2 .prof-name {
@@ -162,17 +177,23 @@
     font-weight: 500;
     font-size: 15px;
     color: #8A8A8A;
-    margin-top: -18px;
+    margin-top: 0;
+    padding: 0;
 }
 
 .seller-cont .prof-det {
     color: #8A8A8A;
     font-size: 15px;
+    margin-top: 0;
+    padding: 0;
 }
 
 .prof-pic {
-    height: 81px;
-    width: 81px;
+    height: 85px;
+    width: 85px;
+    border-radius: 100%;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .status-cont {
@@ -189,8 +210,9 @@
 }
 
 .status-cont .status-stat {
+    margin-left: 0.15em;
     font-size: 21px;
-    color: #5CACA9;
+
 }
 
 .send-cont {
@@ -230,4 +252,35 @@
 .send-cont .send-btn:hover {
     background-color: #FEB005;
     border: 1px solid #FEB005;
+}
+
+/* status */
+
+
+.status-offered {
+    color: #E84C1C;
+}
+
+
+.status-wanted {
+    color: #5CACA9;
+}
+
+/* msg */
+
+
+.linkToMsg {
+    color: #5CACA9;
+    text-decoration:
+        none;
+    font-weight: 700;
+}
+
+.linkToMsg:hover {
+    color: #FEB005;
+}
+
+.seller-cont a {
+    text-decoration: none;
+    color: black;
 }
