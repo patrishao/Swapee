@@ -37,6 +37,11 @@ img {
     z-index: -1;
 }
 
+
+.post-link {
+    width: 100%;
+}
+
 .information-item {
 
     position: absolute;
@@ -134,8 +139,9 @@ img {
 
 .profile-pic {
     height: 95px;
-    width: 95px;
-    border-radius: 100px;
+    width: 150px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .bio {

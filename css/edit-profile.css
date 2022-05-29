@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     font-family: 'Inter', sans-serif;
 }
@@ -46,6 +47,10 @@ h4 {
     padding-bottom: 13px;
 }
 
+::placeholder {
+    font-size: 15px;
+}
+
 .usernames {
     margin-left: 20px;
     height: 129px;
@@ -69,27 +74,39 @@ h4 {
 }
 
 .edit-pic {
-    width: 100%;
+
     border-radius: 50%;
     display: block;
+    filter: brightness(50%);
+    width: 130px;
+    height: 17vh;
+    object-fit: cover;
+
 }
 
 .prof-pic {
     position: relative;
-    width: 129px;
+
+
+}
+
+
+.edit-pic-upload {
+    cursor: pointer;
+
 }
 
 .edit-pic-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 35%;
+    left: 40%;
+
+
+
 }
 
-#file {
-    display: none;
-}
+
+
 
 .editprof-group label {
     font-size: 10px;
@@ -117,15 +134,22 @@ textarea {
 }
 
 
-/* 
+
 .editprof-location {
     font-size: 18px;
     outline: none;
-    border: none;
+    border: 0px;
     border-bottom: 1px solid #9D9D9D;
-    padding: 2.5px 0px 3px 0px;
     width: 100%;
-} */
+    padding: 0px 0px 3px 0px;
+    margin-bottom: 1.5em;
+    margin-top: 0;
+}
+
+#loc {
+    border: none;
+    font-size: 16px;
+}
 
 .editprof-location select {
     width: 100%;
@@ -180,6 +204,14 @@ textarea {
     border: 1px solid #FEB005;
 }
 
+/* alert */
+.alert {
+    text-align: center;
+
+    margin: 1.5em 0em;
+    border-radius: 0;
+}
+
 @media (max-width: 405px) {
     .acc-details {
         display: flex;
@@ -188,6 +220,7 @@ textarea {
         width: 100%;
         justify-content: center;
     }
+
     .acc-details img {
         display: block;
     }
