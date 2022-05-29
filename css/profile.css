@@ -69,9 +69,6 @@ img {
 
 }
 
-.time-item {}
-
-
 
 
 .info-container {
@@ -171,6 +168,7 @@ img {
     display: flex;
     width: 60px;
     margin-left: 10px;
+    border-radius: 20px;
 }
 
 .rating-img {
@@ -187,6 +185,66 @@ img {
 
     color: #8A8A8A;
     margin-left: 7px;
+}
+
+.rating:hover{
+    background-color:rgba(255, 227, 47, 0.29);
+    cursor: pointer;
+}
+
+.rating-box{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    margin-top: 20px;
+    border: solid 1px;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.rate{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }
 
 .prof-buttons {
@@ -234,15 +292,11 @@ img {
         width: 100%;
     }
 
-    .name-item {}
-
     .categ-item {
         top: 20px;
 
     }
-
-    .time-item {}
-
+  
 
 }
 
@@ -287,7 +341,7 @@ img {
 @media screen and (max-width: 767px) {
 
     .prof-buttons {
-        margin-left: 100px;
+        margin-left: 49px;
     }
 
     .bio {
