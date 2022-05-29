@@ -64,9 +64,9 @@ function getFirstLastName($connection, $id)
 
 function getUserImg($connection, $id)
 {
-    $getDetailsQuery =  mysqli_query($connection, "SELECT profile_pic from users WHERE user_id = '$id'");
+    $getImgDetailsQuery =  mysqli_query($connection, "SELECT profile_pic from users WHERE user_id = '$id'");
 
-    $row = mysqli_fetch_assoc($getDetailsQuery);
+    $row = mysqli_fetch_assoc($getImgDetailsQuery);
     $userProfImg = $row['profile_pic'];
 
 
@@ -177,3 +177,31 @@ function getDateFromLatestMsg($userLoggedIn, $user2, $connection)
 
     return  $time_message;
 }
+
+
+
+
+// check if convo between user logged in and other user exixsts of the post id
+// so that if its from a different post, users can
+function checkIfConvoBetweenUsersExist($connection, $userLoggedIn, $user_to, $post_id)
+{
+    $getMsgQuery2 = mysqli_query($connection, "SELECT * FROM messages WHERE user_toID = $userLoggedIn AND
+    user_fromID = $user_to  AND message_post_id = $post_id OR user_fromID = $userLoggedIn AND user_toID = $user_to AND message_post_id = $post_id");
+
+    $msgCount = mysqli_num_rows($getMsgQuery2);
+
+    // if count is greater or equal than 1, reutrn true
+    $checkConvo = $msgCount >= 1 ? true : false;
+
+
+    return $checkConvo;
+}
+
+
+
+// function categImage($category){
+
+//     switch($category){
+//         case "all-items":
+//     }
+// }

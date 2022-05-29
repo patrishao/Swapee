@@ -24,14 +24,54 @@
 
 <body>
 
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar.php';
+    require_once('private/includes/connection.php');
+    require_once('private/includes/functions.php');
+    require_once('private/includes/current-user-details.php')
+    ?>
+
+    <?php
+
+
+    // getting postID from the link
+    $postID = $_GET['p_id'];
+
+
+
+
+    // getting the most recent featured items but limit it to 3
+    $getFeaturedItemsQuery = "SELECT * FROM posts WHERE post_id = $postID";
+
+    $getFeaturedItemResult = mysqli_query($connection, $getFeaturedItemsQuery);
+
+
+    while ($row = mysqli_fetch_assoc($getFeaturedItemResult)) {
+
+        $post_id = $row['post_id'];
+        $title = $row['title'];
+        $category = ucfirst($row['category']);
+        $description = $row['description'];
+        $post_user_id = $row['user_id'];
+        $status = $row['status'];
+        $isFeatured = $row['isFeatured'];
+        $cover_img = $row['cover-img'];
+        $dateCreated = $row['dateCreated'];
+        $sub_img1 = $row['sub_img1'];
+        $sub_img2 = $row['sub_img2'];
+        $sub_img3 = $row['sub_img3'];
+    }
+
+
+
+
+    ?>
 
     <div class="back-container">
         <a href="index.php" class="back-link"><img src="images/icons/back-icon.svg" alt="">Back</a>
     </div>
 
     <div class="main-container">
-        
+
         <!-- CHANGES BY CHAY -->
 
         <div class="pic-holder ps-4 pe-4">
@@ -40,8 +80,22 @@
             </div>
 
             <div class="container photo-container p-5">
-                <img src="images/uploaded-imgs/chanelmakeup.jpg" class="photos">
-                <img src="images/uploaded-imgs/diorlipstic.jpg" class="photos">
+
+                <div class="photo">
+                    <img src="images/uploaded-imgs/<?php echo  $cover_img ?>" class="photos">
+                </div>
+                <div class="photo">
+                    <img src="images/uploaded-imgs/<?php echo  $sub_img1 ?>" class="photos">
+                </div>
+
+                <div class="photo">
+                    <img src="images/uploaded-imgs/<?php echo  $sub_img2 ?>" class="photos">
+                </div>
+
+                <div class="photo">
+                    <img src="images/uploaded-imgs/<?php echo  $sub_img3 ?>" class="photos">
+                </div>
+
             </div>
 
             <div class="right-arrow arrow">
@@ -57,47 +111,127 @@
             <div class="text-container">
 
                 <div class="title-cont">
-                    <p class="name-of-post">Detergent Essentials</p>
-                    <p class="name-of-post-subtext">Supermarket</p>
+                    <p class="name-of-post"><?php echo  $title ?></p>
+                    <p class="name-of-post-subtext"><?php echo  $category ?></p>
                 </div>
 
                 <div class="desc-cont">
                     <p class="desc-title">Description</p>
-                    <p class="desc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis vehicula
-                        velit. Suspendisse potenti. Ut tempor sem et pellentesque dapibus.</p>
+                    <p class="desc-desc"><?php echo  $description ?></p>
                 </div>
+
+
+                <?php
+
+                // getting user details
+
+
+                $getusersData = "SELECT * FROM users WHERE user_id ='$post_user_id' ";
+                $get_all_users_query = mysqli_query($connection, $getusersData);
+
+
+
+                // start the query and get the results of the user
+                while ($row2 = mysqli_fetch_array($get_all_users_query)) {
+
+
+                    $post_firstName = strtolower($row2['first_name']);
+                    $post_firstName = ucfirst($post_firstName);
+                    $post_lastName = strtolower($row2['last_name']);
+                    $post_lastName = ucfirst($post_lastName);
+                    $post_profile_pic = $row2['profile_pic'];
+                    $post_rating = $row2['rating'];
+                    $post_username = strtolower($row2['username']);
+                    $post_location = $row2['location'];
+                }
+
+
+                ?>
 
                 <div class="seller-cont">
                     <p class="seller-title">Seller Details</p>
-                    <div class="seller-desc">
-                        <img src="images/pfp-pl.png" class="prof-pic" alt="" srcset="">
-                        <div class="seller-desc2">
-                            <p class="prof-name">Kaya Todei</p>
-                            <p class="prof-user">@dimosyur</p>
-                            <p class="prof-det"><img src="images/icons/loc-icon.svg" alt=""> Sharjah <img
-                                    src="images/icons/bi_star.svg" alt=""> 2.1/5</p>
+
+                    <!-- redirecting users to the profile page of users -->
+                    <a href="profile.php?u-id=<?php echo $post_user_id ?>">
+                        <div class="seller-desc">
+
+                            <img src="images/uploaded-imgs/<?php echo  $post_profile_pic ?>" class="prof-pic" alt=""
+                                srcset="">
+                            <div class="seller-desc2">
+                                <p class="prof-name"><?php echo  $post_firstName . " "  . $post_lastName ?></p>
+                                <p class="prof-user">@<?php echo  $post_username ?></p>
+                                <p class="prof-det"><img src="images/icons/loc-icon.svg" alt="">
+                                    <?php echo $checkLoc =   empty($post_location) ?  "Location unset" :   $post_location; ?>
+                                    <img src="images/icons/bi_star.svg" alt=""> <?php echo  $post_rating ?>/5
+                                </p>
+                            </div>
+
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="status-cont">
                     <p class="status-title">Status: </p>
-                    <p class="status-stat">&nbsp Wanted</p>
+                    <p class="status-stat <?php echo checkItemisOffered($status) ?> ">
+                        <?php echo " " . ucfirst($status) ?>
+                    </p>
                 </div>
+
+                <!-- check if the userID is not the seller if it is, don't show the send message -->
+                <?php if ($userID != $post_user_id) { ?>
 
                 <div class="send-cont">
 
 
                     <p class="send-title">Send seller a message</p>
+                    <?php require 'private/sendSellerMsg.php';
+
+
+
+
+                        // only sending a message if the user has no conversation with the other user with that specific post
+                        if (checkIfConvoBetweenUsersExist($connection, $userID, $post_user_id, $postID)) {
+
+                        ?>
+
+                    <p>You already have an existing conversation with this user. <span><a class="linkToMsg"
+                                href="message.php?u=<?php echo $post_user_id ?>">Go to the
+                                message?</span></a>
+                    </p>
+
+                    <?php } else { ?>
+
+
                     <form class="send-message" action="" method="POST">
-                        <input class="send-input" type="text" name="sendquestion" value=""
+                        <input class="send-input" type="text" name="messageToUser" value=""
                             placeholder="Hi, is this available?"> <br>
-                        <input class="send-btn" type="submit" name="send" value="Send">
+
+                        <input type="text" value="<?php echo $userID ?>" hidden name="userLoggedIn">
+
+                        <input type="text" value="<?php echo $post_id ?>" hidden name="postID">
+
+                        <input type="text" value="<?php echo $cover_img ?>" hidden name="postImg">
+
+                        <input type="text" value="<?php echo $post_user_id ?>" hidden name="userTo">
+
+                        <input type="text" value="<?php echo $title ?>" hidden name="subject">
+
+                        <input class="send-btn" type="submit" name="sendMsg" value="Send">
                     </form>
                 </div>
 
 
+
+
+                <?php } ?>
+
+
+
+
+
             </div>
+
+            <?php } ?>
         </div>
 
     </div>
