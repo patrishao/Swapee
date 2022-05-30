@@ -59,7 +59,7 @@
 
                             <?php require_once('private/login-handler.php'); ?>
 
-                            <a href="#" class="forgot-p">Forgot password?</a>
+                            <a href="forgot-pass.php" class="forgot-p">Forgot password?</a>
                             <button type="submit" value="" class="btn-login" name="login">
                                 LOG IN
                             </button>

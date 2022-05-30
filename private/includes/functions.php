@@ -64,9 +64,9 @@ function getFirstLastName($connection, $id)
 
 function getUserImg($connection, $id)
 {
-    $getDetailsQuery =  mysqli_query($connection, "SELECT * from users WHERE user_id = '$id'");
+    $getImgDetailsQuery =  mysqli_query($connection, "SELECT profile_pic from users WHERE user_id = '$id'");
 
-    $row = mysqli_fetch_assoc($getDetailsQuery);
+    $row = mysqli_fetch_assoc($getImgDetailsQuery);
     $userProfImg = $row['profile_pic'];
 
 
@@ -112,4 +112,114 @@ function getLatestMsg($userLoggedIn, $user2, $connection)
 
 
     return $sent_by . $row['body'];
+}
+
+// getting date from latest msgs
+function getDateFromLatestMsg($userLoggedIn, $user2, $connection)
+{
+
+    $getMsgQuery = mysqli_query($connection, "SELECT body, user_toID, date FROM messages WHERE user_toID = '$userLoggedIn' AND user_fromID = '$user2' OR user_toID = '$user2' AND user_fromID ='$userLoggedIn' ORDER BY msg_id DESC LIMIT 1");
+
+    $row = mysqli_fetch_array($getMsgQuery);
+
+
+
+    //Timeframe
+    $date_time_now = date("Y-m-d H:i:s");
+    $start_date = new DateTime($row['date']); //Time of post
+    $end_date = new DateTime($date_time_now); //Current time
+    $interval = $start_date->diff($end_date); //Difference between dates 
+    if ($interval->y >= 1) {
+        if ($interval == 1)
+            $time_message = $interval->y . " y"; //1 year ago
+        else
+            $time_message = $interval->y . " y"; //1+ year ago
+    } else if ($interval->m >= 1) {
+        if ($interval->d == 0) {
+            $days = " ago";
+        } else if ($interval->d == 1) {
+            $days = $interval->d . " d";
+        } else {
+            $days = $interval->d . " d";
+        }
+
+
+        if ($interval->m == 1) {
+            $time_message = $interval->m . "m" . $days;
+        } else {
+            $time_message = $interval->m . "m" . $days;
+        }
+    } else if ($interval->d >= 1) {
+        if ($interval->d == 1) {
+            $time_message = "Yesterday";
+        } else {
+            $time_message = $interval->d . "d";
+        }
+    } else if ($interval->h >= 1) {
+        if ($interval->h == 1) {
+            $time_message = $interval->h . "h";
+        } else {
+            $time_message = $interval->h . "h";
+        }
+    } else if ($interval->i >= 1) {
+        if ($interval->i == 1) {
+            $time_message = $interval->i . "m";
+        } else {
+            $time_message = $interval->i . "m";
+        }
+    } else {
+        if ($interval->s < 30) {
+            $time_message = "Just now";
+        } else {
+            $time_message = $interval->s . "s";
+        }
+    }
+
+    return  $time_message;
+}
+
+
+
+
+// check if convo between user logged in and other user exixsts of the post id
+// so that if its from a different post, users can
+function checkIfConvoBetweenUsersExist($connection, $userLoggedIn, $user_to, $post_id)
+{
+    $getMsgQuery2 = mysqli_query($connection, "SELECT * FROM messages WHERE user_toID = $userLoggedIn AND
+    user_fromID = $user_to  AND message_post_id = $post_id OR user_fromID = $userLoggedIn AND user_toID = $user_to AND message_post_id = $post_id");
+
+    $msgCount = mysqli_num_rows($getMsgQuery2);
+
+    // if count is greater or equal than 1, reutrn true
+    $checkConvo = $msgCount >= 1 ? true : false;
+
+
+    return $checkConvo;
+}
+
+
+
+// checking the ratings table 
+function calculateUserRating($connection, $user_to)
+{
+
+    // getting all rows from specific user id to get the ratings
+    $getRatingQuery = mysqli_query($connection, "SELECT * FROM rating WHERE ratingTo = '$user_to'");
+
+    // getting total number of ratings
+    $totalRatings = mysqli_num_rows($getRatingQuery);
+
+    // summing up the ratings
+    $sumRatingsQuery = mysqli_query($connection, "SELECT SUM(rating) FROM rating WHERE ratingTo = '$user_to' ");
+
+    $row = mysqli_fetch_array($sumRatingsQuery);
+    $sumRatings = $row[0];
+
+    // if no rating is available return result as 0, if there is return the ratings
+    if ($sumRatings == 0) {
+        return   "0";
+    } else {
+        // getting average rating
+        return $ratingCalculate = $sumRatings / $totalRatings;
+    }
 }

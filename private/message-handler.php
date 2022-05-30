@@ -52,6 +52,8 @@ if (isset($_POST['sendMsg'])) {
 
         // inserting the query to the database, and making sure that the sender or userfrom is the userloggedin
         $insertMsgQuery = mysqli_query($connection, "INSERT INTO messages (user_toID, user_fromID, body, date)VALUES ('$user_to', '$userLoggedIn', '$txtMsg', '$date')");
+
+
         header("Location: message.php#chatbox");
     }
 }

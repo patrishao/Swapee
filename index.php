@@ -18,6 +18,8 @@
 <body>
 
     <?php include 'navbar.php'; ?>
+    <?php include 'private/includes/current-user-details.php'; ?>
+
 
 
 
@@ -30,9 +32,23 @@
 
             <div class="container d-flex justify-content-center align-content-center align-items-center ">
 
-                <h1 class="p-lg-5 p-2 ">Swap anywhere online!</h1>
 
-                <img src="images/home/top.png" alt="" class="">
+                <?php if (empty($userID)) { ?>
+
+                <div class="container">
+                    <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome to Swapee!</h1>
+
+                    <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
+                </div>
+                <?php } else { ?>
+
+                <div class="container">
+                    <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome back, <?php echo $firstName ?></h1>
+
+                    <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
+                </div>
+                <?php } ?>
+                <img src="images/home/illus_homepage.png" alt="" class="">
 
             </div>
 
@@ -40,8 +56,9 @@
 
         <div class="top-ad text-center m-5 ">
 
-            <img src="images/home/top-ad.png" alt="" class="">
-
+            <a href="https://dodocodes.com/">
+                <img src="images/home/top-ad.png" alt="" class="">
+            </a>
         </div>
 
 
@@ -64,27 +81,27 @@
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <h5 class="d-none">Categories</h5>
-                                <li><a href=" index-categ.php?categ=all-items">All items </a> </li>
-                                <li> <a href="index-categ.php?categ=self-care">Self-care</a> </li>
-                                <li><a href="index-categ.php?categ=beauty">Beauty</a> </li>
-                                <li> <a href="index-categ.php?categ=electronics">Electronics</a> </li>
-                                <li> <a href="index-categ.php?categ=supermarket">Supermarket</a> </li>
-                                <li> <a href="index-categ.php?categ=sports">Sports</a> </li>
-                                <li> <a href="index-categ.php?categ=laptops">Laptops</a> </li>
-                                <li> <a href="index-categ.php?categ=toys">Toys</a> </li>
-                                <li> <a href="index-categ.php?categ=kitchen">Kitchen</a> </li>
-                                <li> <a href="index-categ.php?categ=baby">Baby</a> </li>
-                                <li> <a href="index-categ.php?categ=mobiles">Mobiles</a> </li>
-                                <li> <a href="index-categ.php?categ=fashion">Fashion</a> </li>
-                                <li> <a href="index-categ.php?categ=instruments">Instruments</a> </li>
-                                <li> <a href="index-categ.php?categ=books">Books</a> </li>
-                                <li> <a href="index-categ.php?categ=others">Others</a> </li>
+                                <li><a href=" index-categ.php?categ=all-items#item">All items </a> </li>
+                                <li> <a href="index-categ.php?categ=self-care#item">Self-care</a> </li>
+                                <li><a href="index-categ.php?categ=beauty#item">Beauty</a> </li>
+                                <li> <a href="index-categ.php?categ=electronics#item">Electronics</a> </li>
+                                <li> <a href="index-categ.php?categ=supermarket#item">Supermarket</a> </li>
+                                <li> <a href="index-categ.php?categ=sports#item">Sports</a> </li>
+                                <li> <a href="index-categ.php?categ=laptops#item">Laptops</a> </li>
+                                <li> <a href="index-categ.php?categ=toys#item">Toys</a> </li>
+                                <li> <a href="index-categ.php?categ=kitchen#item">Kitchen</a> </li>
+                                <li> <a href="index-categ.php?categ=baby#item">Baby</a> </li>
+                                <li> <a href="index-categ.php?categ=mobiles#item">Mobiles</a> </li>
+                                <li> <a href="index-categ.php?categ=fashion#item">Fashion</a> </li>
+                                <li> <a href="index-categ.php?categ=instruments#item">Instruments</a> </li>
+                                <li> <a href="index-categ.php?categ=books#item">Books</a> </li>
+                                <li> <a href="index-categ.php?categ=others#item">Others</a> </li>
                             </ul>
 
                         </div>
                         <div class="categories">
 
-                            <div class="dropdown">
+                            <div class="dropdown d-none">
 
                                 <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                     data-toggle="dropdown" aria-expanded="false">
@@ -113,25 +130,25 @@
 
                             <div class="categories">
                                 <h5>Categories</h5>
-                                <a href="index-categ.php?categ=all-items">All items </a>
-                                <a href="index-categ.php?categ=self-care">Self-care</a>
-                                <a href="index-categ.php?categ=beauty">Beauty</a>
-                                <a href="index-categ.php?categ=electronics">Electronics</a>
-                                <a href="index-categ.php?categ=supermarket">Supermarket</a>
-                                <a href="index-categ.php?categ=sports">Sports</a>
-                                <a href="index-categ.php?categ=laptops">Laptops</a>
-                                <a href="index-categ.php?categ=toys">Toys</a>
-                                <a href="index-categ.php?categ=kitchen">Kitchen</a>
-                                <a href="index-categ.php?categ=baby">Baby</a>
-                                <a href="index-categ.php?categ=mobiles">Mobiles</a>
-                                <a href="index-categ.php?categ=fashion">Fashion</a>
-                                <a href="index-categ.php?categ=instruments">Instruments</a>
-                                <a href="index-categ.php?categ=books">Books</a>
-                                <a href="index-categ.php?categ=others">Others</a>
+                                <a href="index-categ.php?categ=all-items#item">All items </a>
+                                <a href="index-categ.php?categ=self-care#item">Self-care</a>
+                                <a href="index-categ.php?categ=beauty#item">Beauty</a>
+                                <a href="index-categ.php?categ=electronics#item">Electronics</a>
+                                <a href="index-categ.php?categ=supermarket#item">Supermarket</a>
+                                <a href="index-categ.php?categ=sports#item">Sports</a>
+                                <a href="index-categ.php?categ=laptops#item">Laptops</a>
+                                <a href="index-categ.php?categ=toys#item">Toys</a>
+                                <a href="index-categ.php?categ=kitchen#item">Kitchen</a>
+                                <a href="index-categ.php?categ=baby#item">Baby</a>
+                                <a href="index-categ.php?categ=mobiles#item">Mobiles</a>
+                                <a href="index-categ.php?categ=fashion#item">Fashion</a>
+                                <a href="index-categ.php?categ=instruments#item">Instruments</a>
+                                <a href="index-categ.php?categ=books#item">Books</a>
+                                <a href="index-categ.php?categ=others#item">Others</a>
                             </div>
 
 
-                            <div class="categories mt-5">
+                            <div class="categories mt-5 d-none">
                                 <h5>Sort by</h5>
                                 <a href="">Offered</a>
                                 <a href="">Wanted</a>
@@ -179,17 +196,22 @@
 
                             ?>
 
-                            <div class="item col ">
-                                <div class="featured-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="star" width="30" height="30"
-                                        viewBox="0 0 44 39" fill="none">
-                                        <path
-                                            d="M42.5779 13.733L29.3875 11.9537L23.4911 0.85833C23.33 0.554545 23.0651 0.308624 22.7378 0.159143C21.917 -0.216971 20.9195 0.0964574 20.5091 0.85833L14.6127 11.9537L1.42234 13.733C1.05868 13.7812 0.726193 13.9404 0.471633 14.1815C0.163885 14.475 -0.00569854 14.87 0.000146221 15.2796C0.00599098 15.6892 0.186786 16.0799 0.502804 16.3658L10.0462 25.002L7.79152 37.1968C7.73865 37.4804 7.77247 37.7722 7.88915 38.0389C8.00583 38.3057 8.20069 38.5367 8.45165 38.7059C8.70261 38.8751 8.99963 38.9756 9.30901 38.9961C9.61839 39.0166 9.92776 38.9562 10.202 38.8218L22.0001 33.0643L33.7982 38.8218C34.1203 38.9809 34.4943 39.0339 34.8528 38.9761C35.7567 38.8314 36.3645 38.0358 36.2087 37.1968L33.954 25.002L43.4974 16.3658C43.7572 16.1295 43.9286 15.8209 43.9805 15.4834C44.1208 14.6395 43.487 13.8584 42.5779 13.733Z"
-                                            fill="#FEB005" />
-                                    </svg>
-                                </div>
-                                <img src="images/uploaded-imgs/<?php echo $cover_img ?>" alt="">
 
+
+                            <div class="item col ">
+
+                                <a href="posts.php?p_id=<?php echo $post_id ?>" class="linkToPost">
+                                    <div class="featured-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="star" width="30" height="30"
+                                            viewBox="0 0 44 39" fill="none">
+                                            <path
+                                                d="M42.5779 13.733L29.3875 11.9537L23.4911 0.85833C23.33 0.554545 23.0651 0.308624 22.7378 0.159143C21.917 -0.216971 20.9195 0.0964574 20.5091 0.85833L14.6127 11.9537L1.42234 13.733C1.05868 13.7812 0.726193 13.9404 0.471633 14.1815C0.163885 14.475 -0.00569854 14.87 0.000146221 15.2796C0.00599098 15.6892 0.186786 16.0799 0.502804 16.3658L10.0462 25.002L7.79152 37.1968C7.73865 37.4804 7.77247 37.7722 7.88915 38.0389C8.00583 38.3057 8.20069 38.5367 8.45165 38.7059C8.70261 38.8751 8.99963 38.9756 9.30901 38.9961C9.61839 39.0166 9.92776 38.9562 10.202 38.8218L22.0001 33.0643L33.7982 38.8218C34.1203 38.9809 34.4943 39.0339 34.8528 38.9761C35.7567 38.8314 36.3645 38.0358 36.2087 37.1968L33.954 25.002L43.4974 16.3658C43.7572 16.1295 43.9286 15.8209 43.9805 15.4834C44.1208 14.6395 43.487 13.8584 42.5779 13.733Z"
+                                                fill="#FEB005" />
+                                        </svg>
+                                    </div>
+                                    <img src="images/uploaded-imgs/<?php echo $cover_img ?>" alt="">
+
+                                </a>
                                 <div class="item-details mt-3">
                                     <p class="item-categ"><?php echo $category ?></p>
                                     <p class="item-name"><?php echo $title ?></p>
@@ -198,7 +220,6 @@
                                     </p>
                                 </div>
                             </div>
-
 
 
 
@@ -235,16 +256,18 @@
 
 
                             <div class="item">
-                                <div class="featured-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="star" width="30" height="30"
-                                        viewBox="0 0 44 39" fill="none">
-                                        <path
-                                            d="M42.5779 13.733L29.3875 11.9537L23.4911 0.85833C23.33 0.554545 23.0651 0.308624 22.7378 0.159143C21.917 -0.216971 20.9195 0.0964574 20.5091 0.85833L14.6127 11.9537L1.42234 13.733C1.05868 13.7812 0.726193 13.9404 0.471633 14.1815C0.163885 14.475 -0.00569854 14.87 0.000146221 15.2796C0.00599098 15.6892 0.186786 16.0799 0.502804 16.3658L10.0462 25.002L7.79152 37.1968C7.73865 37.4804 7.77247 37.7722 7.88915 38.0389C8.00583 38.3057 8.20069 38.5367 8.45165 38.7059C8.70261 38.8751 8.99963 38.9756 9.30901 38.9961C9.61839 39.0166 9.92776 38.9562 10.202 38.8218L22.0001 33.0643L33.7982 38.8218C34.1203 38.9809 34.4943 39.0339 34.8528 38.9761C35.7567 38.8314 36.3645 38.0358 36.2087 37.1968L33.954 25.002L43.4974 16.3658C43.7572 16.1295 43.9286 15.8209 43.9805 15.4834C44.1208 14.6395 43.487 13.8584 42.5779 13.733Z"
-                                            fill="#FEB005" />
-                                    </svg>
-                                </div>
-                                <img src="images/uploaded-imgs/<?php echo $cover_img ?>" alt="" class="item1">
 
+                                <a href="posts.php?p_id=<?php echo $post_id ?>" class="linkToPost">
+                                    <div class="featured-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="star" width="30" height="30"
+                                            viewBox="0 0 44 39" fill="none">
+                                            <path
+                                                d="M42.5779 13.733L29.3875 11.9537L23.4911 0.85833C23.33 0.554545 23.0651 0.308624 22.7378 0.159143C21.917 -0.216971 20.9195 0.0964574 20.5091 0.85833L14.6127 11.9537L1.42234 13.733C1.05868 13.7812 0.726193 13.9404 0.471633 14.1815C0.163885 14.475 -0.00569854 14.87 0.000146221 15.2796C0.00599098 15.6892 0.186786 16.0799 0.502804 16.3658L10.0462 25.002L7.79152 37.1968C7.73865 37.4804 7.77247 37.7722 7.88915 38.0389C8.00583 38.3057 8.20069 38.5367 8.45165 38.7059C8.70261 38.8751 8.99963 38.9756 9.30901 38.9961C9.61839 39.0166 9.92776 38.9562 10.202 38.8218L22.0001 33.0643L33.7982 38.8218C34.1203 38.9809 34.4943 39.0339 34.8528 38.9761C35.7567 38.8314 36.3645 38.0358 36.2087 37.1968L33.954 25.002L43.4974 16.3658C43.7572 16.1295 43.9286 15.8209 43.9805 15.4834C44.1208 14.6395 43.487 13.8584 42.5779 13.733Z"
+                                                fill="#FEB005" />
+                                        </svg>
+                                    </div>
+                                    <img src="images/uploaded-imgs/<?php echo $cover_img ?>" alt="" class="item1">
+                                </a>
                                 <div class="item-details mt-3">
                                     <p class="item-categ"><?php echo $category ?></p>
                                     <p class="item-name"><?php echo $title ?></p>
@@ -282,7 +305,9 @@
 
 
         <div class="bot-ad text-center mt-3 mb-4 m-lg-5  ">
-            <img src=" images/home/ad2.png" />
+            <a href="https://www.samsung.com/ae/">
+                <img src=" images/home/ad2.png" />
+            </a>
         </div>
 
 

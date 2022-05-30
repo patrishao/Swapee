@@ -17,17 +17,30 @@
     require_once 'private/includes/functions.php';
     require_once 'private/message-handler.php';
 
-    $isCurrentMsg = false;
+
+    ?>
+
+    <?php
 
 
     ?>
+
 
 
     <!-- TODO: PUT #CHATBOX ON THE LINK -->
     <div class="container">
 
 
-        <?php if ($user_to != "new") { ?>
+        <?php if ($user_to != "new") {
+
+
+
+
+
+        ?>
+
+
+
 
 
         <div class="contents">
@@ -57,9 +70,10 @@
 
                         $user_found2 = getFirstLastName($connection, $username);
                         $latest_message_details = getLatestMsg($userLoggedIn, $username, $connection);
+                        $msgDate = getDateFromLatestMsg($userLoggedIn, $username, $connection);
 
-                        if (strlen($latest_message_details) > 50) {
-                            $lastConvo = substr($latest_message_details, 0, 50) . "...";
+                        if (strlen($latest_message_details) > 35) {
+                            $lastConvo = substr($latest_message_details, 0, 25) . "...";
                         } else {
                             $lastConvo = $latest_message_details;
                         }
@@ -87,7 +101,7 @@
                             </div>
 
                             <div class="time">
-                                <p>1h</p>
+                                <p><?php echo $msgDate ?></p>
                             </div>
 
                         </div>
@@ -150,24 +164,14 @@
 
 
 
-
-
-
-
-
-
-
                         while ($row = mysqli_fetch_assoc($getMsgQuery)) {
 
 
                             $receiver = $row['user_toID'];
                             $sender =  $row['user_fromID'];
                             $body = $row['body'];
-
-
-
-
-
+                            $itemImg = $row['itemImg'];
+                            $subject = $row['subject'];
 
                             if ($sender == $userLoggedIn) {
 
@@ -176,10 +180,29 @@
                         ?>
 
 
+
                     <div class="replier" id="">
 
-                        <img class="replier-img" src="images\<?php echo getUserImg($connection, $userLoggedIn) ?>">
-                        <p class="replier-text"><?php echo $body ?> </p>
+
+
+
+                        <div class="img-inquire">
+                            <?php if (!empty($itemImg)) {  ?>
+                            <img src="images/uploaded-imgs/<?php echo $itemImg ?>" class="imgSubject" />
+                            <p class="msgSubject"> <?php echo $subject ?></p>
+                            <?php } ?>
+
+                        </div>
+
+                        <div class="replier2">
+
+                            <img class="replier-img"
+                                src="images/uploaded-imgs/<?php echo getUserImg($connection, $userLoggedIn) ?>">
+                            <p class="replier-text"><?php echo $body ?> </p>
+
+                        </div>
+
+
                     </div>
 
 
@@ -193,8 +216,22 @@
 
                     <div class="chatter ">
 
-                        <img class="chatter-img" src="images\<?php echo getUserImg($connection, $user_to) ?>">
-                        <p class="chat-text"><?php echo $body ?></p>
+                        <div class="img-inquire">
+
+                            <?php if (!empty($itemImg)) {  ?>
+                            <img src="images/uploaded-imgs/<?php echo $itemImg ?>" class="imgSubject" />
+                            <p class="msgSubject"> <?php echo $subject ?></p>
+                            <?php } ?>
+                        </div>
+
+                        <div class="chatter2">
+
+                            <a href="profile.php?u-id=<?php echo $user_to; ?>">
+                                <img class="chatter-img" src="images\<?php echo getUserImg($connection, $user_to) ?>">
+                            </a>
+                            <p class="chat-text"><?php echo $body ?></p>
+
+                        </div>
                     </div>
 
                     <?php  }

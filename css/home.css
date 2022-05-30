@@ -27,7 +27,7 @@ body {
     font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
-    width: 40%;
+    width: 80%;
 
 
 }
@@ -35,12 +35,14 @@ body {
 .title-categ {
 
 
-    background: url("../images/home/cover-categ.png") no-repeat center;
+    /* background: url("../images/home/cover-categ.png") no-repeat center; */
     max-height: 50vh;
     height: 50vh;
     width: 100%;
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 
 }
 
@@ -272,6 +274,16 @@ body {
     margin-top: 1.5em;
 }
 
+.linkToPost {
+
+    text-decoration: none;
+    color: black;
+
+}
+
+.linkToPost:hover {
+    color: black;
+}
 
 
 

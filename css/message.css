@@ -98,12 +98,19 @@ textarea {
 
 .chatter {
     display: flex;
+    flex-direction: column;
     float: left;
     width: 100%;
 }
 
+
+.chatter>* {
+    display: flex;
+    float: left;
+}
+
 .chatter-img {
-    padding-top: 20px;
+    margin-top: 10px;
     width: 4.5em;
     height: 4.5em;
     object-fit: cover;
@@ -121,18 +128,29 @@ textarea {
 
 .replier {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     width: 100%;
 }
 
+
+.replier>* {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
 .replier-img {
     order: 2;
     margin-left: 10px;
-    padding-top: 20px;
+    vertical-align: middle;
     width: 4.5em;
     height: 4.5em;
     object-fit: cover;
     border-radius: 100%;
+    margin-top: 10px;
 }
 
 .replier-text {
@@ -349,6 +367,31 @@ a {
 .user:hover {
     color: #424242;
 }
+
+
+.img-inqure {
+    display: flex;
+
+
+
+}
+
+
+.imgSubject {
+    width: 30%;
+    max-height: 30vh;
+    margin-left: 1em;
+}
+
+.msgSubject {
+    font-family: 'Inter';
+    color: #2C2C2C;
+    font-style: normal;
+    font-weight: 700;
+    margin: 1em;
+    width: 20%;
+}
+
 
 
 
