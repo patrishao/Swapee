@@ -198,7 +198,7 @@
 
 
                     <!-- dont show rating box if user is the logged in user -->
-                    <?php if ($uID != $userID) { ?>
+                    <?php if ($uID != $userID || !empty($userID)) { ?>
                     <div class="rating-box " id="id-box">
 
                         <?php
