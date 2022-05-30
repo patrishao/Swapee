@@ -1,7 +1,5 @@
 /**/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 html{
@@ -10,19 +8,10 @@ html{
 
 
 body{
-    background-color: #BA5D5D;
-    
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    font-family: 'Inter';
+    font-style: normal;
 }
-
-
-nav{
-    display: flex;
-    color: white;
-    margin-left: 1em;
-}
-
 
 .logo-title{
     font-size: 2rem;
@@ -71,18 +60,32 @@ nav{
     margin-top: 0;
     font-size: 1rem;
     width: 58%;
-    margin-left: 1em;
-    font-family: 'Nunito', sans-serif;
+    text-align: center;
 }
 
 input[type=password]{
-    font-family: 'Nunito', sans-serif;
-    border-radius: 0.5em;
+    font-family: 'Inter';
+    font-style: normal;
+    border-radius: 30px;
     box-sizing: border-box;
     border: 2px solid #6E6868;
     padding: 0.7em 1em;
     font-size: 0.75rem;
-    width: 30em;
+    width: 100%;
+    background-color: rgba(255, 255, 255);
+    margin-bottom: 2em;
+    
+}
+
+input[type=email]{
+    font-family: 'Inter';
+    font-style: normal;
+    border-radius: 30px;
+    box-sizing: border-box;
+    border: 2px solid #6E6868;
+    padding: 0.7em 1em;
+    font-size: 0.75rem;
+    width: 100%;
     background-color: rgba(255, 255, 255);
     margin-bottom: 2em;
     
@@ -92,11 +95,14 @@ input[type=password]{
      
     color: #454343;
     font-size: 0.9rem;
-
-
-
 }
 
+.move-text-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
 
 
 .input:focus{
@@ -111,9 +117,10 @@ input[type=password]{
  }
 
 input[type=submit]{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    background-color: #BA5D5D;
+    font-family: 'Inter';
+    font-style: normal;
+    background-color:#7db4b4;  
+    ;
     color: white;
     border: none;
     font-size: 1.2rem;
@@ -126,11 +133,11 @@ input[type=submit]{
 }
 
 .back{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    background-color: #292929;
-    color: white;
-    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: solid 1px;
     font-size: 1.2rem;
     border-radius: 1rem;
     padding: 0.5em 2.5em;
@@ -152,9 +159,6 @@ input[type=submit]:hover{
 
 }
 
-
-
-
 .conditions{
     font-size: 0.5rem;
     color: #989898;
@@ -167,6 +171,7 @@ input[type=submit]:hover{
 .center-form{
     display: flex;
     justify-content: center;
+    width: 100%;
 
 }
 
@@ -227,18 +232,6 @@ input[type=submit]:hover{
     .center-button{
         display: inline-block;
     }
-
-    input[type=text], input[type=password]{
-        width: 30em;
-    }
-
-
-     nav svg{
-        width: 60px;
-        height: 65px;
-    }
-    
-
     .logo-title{
         font-size: 2.4rem;
         margin-left: 0.3em;
@@ -248,23 +241,6 @@ input[type=submit]:hover{
         width: 90%;
 
 
-    }
-
-    .center-button{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
-
-   
-
-    .back{
-        padding: 0.5em 3em;
-        margin-right: 0;
     }
 
 
