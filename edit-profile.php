@@ -115,7 +115,9 @@ require_once('private/includes/current-user-details.php');
 
                     <div class="buttons">
                         <button class="cancel"><a href="profile.php" class="">Cancel</a></button>
-                        <input class="save" type="submit" name="save" id="" value="Save"> <br><br>
+                        <a class="changePass" href="change-password.php">Change password</a></button>
+                        <input class=" save" type="submit" name="save" id="" value="Save"> <br><br>
+
                     </div>
 
                 </form>

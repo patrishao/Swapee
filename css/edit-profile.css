@@ -79,7 +79,7 @@ h4 {
     display: block;
     filter: brightness(50%);
     width: 130px;
-    height: 17vh;
+    height: 130px;
     object-fit: cover;
 
 }
@@ -176,6 +176,7 @@ textarea {
     border: 1px solid #2C2C2C;
     color: #5CACA9;
     transition: 0.3s;
+    margin-right: 1em;
 }
 
 .cancel:hover {
@@ -210,6 +211,37 @@ textarea {
 
     margin: 1.5em 0em;
     border-radius: 0;
+}
+
+
+/* alert */
+.alert {
+    text-align: center;
+
+    margin: 1.5em 0em;
+    border-radius: 0;
+}
+
+.changePass {
+
+    padding: 0.6em 1em;
+    background-color: #5CACA9;
+    color: white;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px;
+
+    font-weight: 600;
+    transition: 0.3s;
+
+}
+
+.changePass:hover {
+    color: white;
+    background-color: #FEB005;
+
+
 }
 
 @media (max-width: 405px) {
