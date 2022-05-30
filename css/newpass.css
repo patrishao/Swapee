@@ -77,6 +77,20 @@ input[type=password]{
     
 }
 
+input[type=email]{
+    font-family: 'Inter';
+    font-style: normal;
+    border-radius: 30px;
+    box-sizing: border-box;
+    border: 2px solid #6E6868;
+    padding: 0.7em 1em;
+    font-size: 0.75rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255);
+    margin-bottom: 2em;
+    
+}
+
 .label{
      
     color: #454343;
