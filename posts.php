@@ -140,7 +140,6 @@
                     $post_lastName = strtolower($row2['last_name']);
                     $post_lastName = ucfirst($post_lastName);
                     $post_profile_pic = $row2['profile_pic'];
-                    $post_rating = $row2['rating'];
                     $post_username = strtolower($row2['username']);
                     $post_location = $row2['location'];
                 }
@@ -162,7 +161,8 @@
                                 <p class="prof-user">@<?php echo  $post_username ?></p>
                                 <p class="prof-det"><img src="images/icons/loc-icon.svg" alt="">
                                     <?php echo $checkLoc =   empty($post_location) ?  "Location unset" :   $post_location; ?>
-                                    <img src="images/icons/bi_star.svg" alt=""> <?php echo  $post_rating ?>/5
+                                    <img src="images/icons/bi_star.svg" alt="">
+                                    <?php echo   calculateUserRating($connection, $post_user_id) ?>/5
                                 </p>
                             </div>
 
@@ -170,7 +170,11 @@
                     </a>
                 </div>
 
-                <div class="status-cont">
+                <div class="<?php if ($userID != $post_user_id) {
+                                echo "status-cont";
+                            } else {
+                                echo "status-cont2 mt-2";
+                            } ?>">
                     <p class="status-title">Status: </p>
                     <p class="status-stat <?php echo checkItemisOffered($status) ?> ">
                         <?php echo " " . ucfirst($status) ?>

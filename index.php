@@ -18,6 +18,8 @@
 <body>
 
     <?php include 'navbar.php'; ?>
+    <?php include 'private/includes/current-user-details.php'; ?>
+
 
 
 
@@ -30,9 +32,23 @@
 
             <div class="container d-flex justify-content-center align-content-center align-items-center ">
 
-                <h1 class="p-lg-5 p-2 ">Swap anywhere online!</h1>
 
-                <img src="images/home/top.png" alt="" class="">
+                <?php if (empty($userID)) { ?>
+
+                <div class="container">
+                    <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome to Swapee!</h1>
+
+                    <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
+                </div>
+                <?php } else { ?>
+
+                <div class="container">
+                    <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome back, <?php echo $firstName ?></h1>
+
+                    <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
+                </div>
+                <?php } ?>
+                <img src="images/home/illus_homepage.png" alt="" class="">
 
             </div>
 
@@ -40,8 +56,9 @@
 
         <div class="top-ad text-center m-5 ">
 
-            <img src="images/home/top-ad.png" alt="" class="">
-
+            <a href="https://dodocodes.com/">
+                <img src="images/home/top-ad.png" alt="" class="">
+            </a>
         </div>
 
 
@@ -64,21 +81,21 @@
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <h5 class="d-none">Categories</h5>
-                                <li><a href=" index-categ.php?categ=all-items">All items </a> </li>
-                                <li> <a href="index-categ.php?categ=self-care">Self-care</a> </li>
-                                <li><a href="index-categ.php?categ=beauty">Beauty</a> </li>
-                                <li> <a href="index-categ.php?categ=electronics">Electronics</a> </li>
-                                <li> <a href="index-categ.php?categ=supermarket">Supermarket</a> </li>
-                                <li> <a href="index-categ.php?categ=sports">Sports</a> </li>
-                                <li> <a href="index-categ.php?categ=laptops">Laptops</a> </li>
-                                <li> <a href="index-categ.php?categ=toys">Toys</a> </li>
-                                <li> <a href="index-categ.php?categ=kitchen">Kitchen</a> </li>
-                                <li> <a href="index-categ.php?categ=baby">Baby</a> </li>
-                                <li> <a href="index-categ.php?categ=mobiles">Mobiles</a> </li>
-                                <li> <a href="index-categ.php?categ=fashion">Fashion</a> </li>
-                                <li> <a href="index-categ.php?categ=instruments">Instruments</a> </li>
-                                <li> <a href="index-categ.php?categ=books">Books</a> </li>
-                                <li> <a href="index-categ.php?categ=others">Others</a> </li>
+                                <li><a href=" index-categ.php?categ=all-items#item">All items </a> </li>
+                                <li> <a href="index-categ.php?categ=self-care#item">Self-care</a> </li>
+                                <li><a href="index-categ.php?categ=beauty#item">Beauty</a> </li>
+                                <li> <a href="index-categ.php?categ=electronics#item">Electronics</a> </li>
+                                <li> <a href="index-categ.php?categ=supermarket#item">Supermarket</a> </li>
+                                <li> <a href="index-categ.php?categ=sports#item">Sports</a> </li>
+                                <li> <a href="index-categ.php?categ=laptops#item">Laptops</a> </li>
+                                <li> <a href="index-categ.php?categ=toys#item">Toys</a> </li>
+                                <li> <a href="index-categ.php?categ=kitchen#item">Kitchen</a> </li>
+                                <li> <a href="index-categ.php?categ=baby#item">Baby</a> </li>
+                                <li> <a href="index-categ.php?categ=mobiles#item">Mobiles</a> </li>
+                                <li> <a href="index-categ.php?categ=fashion#item">Fashion</a> </li>
+                                <li> <a href="index-categ.php?categ=instruments#item">Instruments</a> </li>
+                                <li> <a href="index-categ.php?categ=books#item">Books</a> </li>
+                                <li> <a href="index-categ.php?categ=others#item">Others</a> </li>
                             </ul>
 
                         </div>
@@ -113,21 +130,21 @@
 
                             <div class="categories">
                                 <h5>Categories</h5>
-                                <a href="index-categ.php?categ=all-items">All items </a>
-                                <a href="index-categ.php?categ=self-care">Self-care</a>
-                                <a href="index-categ.php?categ=beauty">Beauty</a>
-                                <a href="index-categ.php?categ=electronics">Electronics</a>
-                                <a href="index-categ.php?categ=supermarket">Supermarket</a>
-                                <a href="index-categ.php?categ=sports">Sports</a>
-                                <a href="index-categ.php?categ=laptops">Laptops</a>
-                                <a href="index-categ.php?categ=toys">Toys</a>
-                                <a href="index-categ.php?categ=kitchen">Kitchen</a>
-                                <a href="index-categ.php?categ=baby">Baby</a>
-                                <a href="index-categ.php?categ=mobiles">Mobiles</a>
-                                <a href="index-categ.php?categ=fashion">Fashion</a>
-                                <a href="index-categ.php?categ=instruments">Instruments</a>
-                                <a href="index-categ.php?categ=books">Books</a>
-                                <a href="index-categ.php?categ=others">Others</a>
+                                <a href="index-categ.php?categ=all-items#item">All items </a>
+                                <a href="index-categ.php?categ=self-care#item">Self-care</a>
+                                <a href="index-categ.php?categ=beauty#item">Beauty</a>
+                                <a href="index-categ.php?categ=electronics#item">Electronics</a>
+                                <a href="index-categ.php?categ=supermarket#item">Supermarket</a>
+                                <a href="index-categ.php?categ=sports#item">Sports</a>
+                                <a href="index-categ.php?categ=laptops#item">Laptops</a>
+                                <a href="index-categ.php?categ=toys#item">Toys</a>
+                                <a href="index-categ.php?categ=kitchen#item">Kitchen</a>
+                                <a href="index-categ.php?categ=baby#item">Baby</a>
+                                <a href="index-categ.php?categ=mobiles#item">Mobiles</a>
+                                <a href="index-categ.php?categ=fashion#item">Fashion</a>
+                                <a href="index-categ.php?categ=instruments#item">Instruments</a>
+                                <a href="index-categ.php?categ=books#item">Books</a>
+                                <a href="index-categ.php?categ=others#item">Others</a>
                             </div>
 
 
@@ -288,7 +305,9 @@
 
 
         <div class="bot-ad text-center mt-3 mb-4 m-lg-5  ">
-            <img src=" images/home/ad2.png" />
+            <a href="https://www.samsung.com/ae/">
+                <img src=" images/home/ad2.png" />
+            </a>
         </div>
 
 

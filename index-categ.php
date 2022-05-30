@@ -81,7 +81,7 @@
 
          <div class="top-ad text-center m-4 m-lg-5  ">
 
-             <img src="images/home/ad2.png" alt="" class="">
+             <img src="images/home/topad2.png" alt="" class="">
 
          </div>
 
@@ -105,22 +105,22 @@
 
                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                  <h5 class="d-none">Categories</h5>
-                                 <li><a href=" index-categ.php?categ=all-items">Featured Items</a> </li>
-                                 <li><a href=" index-categ.php?categ=all-items">All items </a> </li>
-                                 <li> <a href="index-categ.php?categ=self-care">Self-care</a> </li>
-                                 <li><a href="index-categ.php?categ=beauty">Beauty</a> </li>
-                                 <li> <a href="index-categ.php?categ=electronics">Electronics</a> </li>
-                                 <li> <a href="index-categ.php?categ=supermarket">Supermarket</a> </li>
-                                 <li> <a href="index-categ.php?categ=sports">Sports</a> </li>
-                                 <li> <a href="index-categ.php?categ=laptops">Laptops</a> </li>
-                                 <li> <a href="index-categ.php?categ=toys">Toys</a> </li>
-                                 <li> <a href="index-categ.php?categ=kitchen">Kitchen</a> </li>
-                                 <li> <a href="index-categ.php?categ=baby">Baby</a> </li>
-                                 <li> <a href="index-categ.php?categ=mobiles">Mobiles</a> </li>
-                                 <li> <a href="index-categ.php?categ=fashion">Fashion</a> </li>
-                                 <li> <a href="index-categ.php?categ=instruments">Instruments</a> </li>
-                                 <li> <a href="index-categ.php?categ=books">Books</a> </li>
-                                 <li> <a href="index-categ.php?categ=others">Others</a> </li>
+                                 <li><a href=" index-categ.php?categ=all-items#item">Featured Items</a> </li>
+                                 <li><a href=" index-categ.php?categ=all-items#item">All items </a> </li>
+                                 <li> <a href="index-categ.php?categ=self-care#item">Self-care</a> </li>
+                                 <li><a href="index-categ.php?categ=beauty#item">Beauty</a> </li>
+                                 <li> <a href="index-categ.php?categ=electronics#item">Electronics</a> </li>
+                                 <li> <a href="index-categ.php?categ=supermarket#item">Supermarket</a> </li>
+                                 <li> <a href="index-categ.php?categ=sports#item">Sports</a> </li>
+                                 <li> <a href="index-categ.php?categ=laptops#item">Laptops</a> </li>
+                                 <li> <a href="index-categ.php?categ=toys#item">Toys</a> </li>
+                                 <li> <a href="index-categ.php?categ=kitchen#item">Kitchen</a> </li>
+                                 <li> <a href="index-categ.php?categ=baby#item">Baby</a> </li>
+                                 <li> <a href="index-categ.php?categ=mobiles#item">Mobiles</a> </li>
+                                 <li> <a href="index-categ.php?categ=fashion#item">Fashion</a> </li>
+                                 <li> <a href="index-categ.php?categ=instruments#item">Instruments</a> </li>
+                                 <li> <a href="index-categ.php?categ=books#item">Books</a> </li>
+                                 <li> <a href="index-categ.php?categ=others#item">Others</a> </li>
                              </ul>
 
                          </div>
@@ -134,10 +134,13 @@
                                  </a>
                                  <ul class="dropdown-menu  " aria-labelledby="dropdownMenuLink">
 
-                                     <li> <a href="">Offered</a></li>
+                                     <li> <a
+                                             href="index-categ.php?categ=<?php echo $categoryName ?>&sort=offered#item">Offered</a>
+                                     </li>
                                      <li>
 
-                                         <a href="">Wanted</a>
+                                         <a
+                                             href="index-categ.php?categ=<?php echo $categoryName ?>&sort=wanted#item">Wanted</a>
                                      </li>
                                  </ul>
                              </div>
@@ -155,29 +158,30 @@
 
                              <div class="categories">
                                  <h5>Categories</h5>
-                                 <a href="index-categ.php?categ=featured">Featured</a>
-                                 <a href="index-categ.php?categ=all-items">All items </a>
-                                 <a href="index-categ.php?categ=self-care">Self-care</a>
-                                 <a href="index-categ.php?categ=beauty">Beauty</a>
-                                 <a href="index-categ.php?categ=electronics">Electronics</a>
-                                 <a href="index-categ.php?categ=supermarket">Supermarket</a>
-                                 <a href="index-categ.php?categ=sports">Sports</a>
-                                 <a href="index-categ.php?categ=laptops">Laptops</a>
-                                 <a href="index-categ.php?categ=toys">Toys</a>
-                                 <a href="index-categ.php?categ=kitchen">Kitchen</a>
-                                 <a href="index-categ.php?categ=baby">Baby</a>
-                                 <a href="index-categ.php?categ=mobiles">Mobiles</a>
-                                 <a href="index-categ.php?categ=fashion">Fashion</a>
-                                 <a href="index-categ.php?categ=instruments">Instruments</a>
-                                 <a href="index-categ.php?categ=books">Books</a>
-                                 <a href="index-categ.php?categ=others">Others</a>
+                                 <a href="index-categ.php?categ=featured#item">Featured</a>
+                                 <a href="index-categ.php?categ=all-items#item">All items </a>
+                                 <a href="index-categ.php?categ=self-care#item">Self-care</a>
+                                 <a href="index-categ.php?categ=beauty#item">Beauty</a>
+                                 <a href="index-categ.php?categ=electronics#item">Electronics</a>
+                                 <a href="index-categ.php?categ=supermarket#item">Supermarket</a>
+                                 <a href="index-categ.php?categ=sports#item">Sports</a>
+                                 <a href="index-categ.php?categ=laptops#item">Laptops</a>
+                                 <a href="index-categ.php?categ=toys#item">Toys</a>
+                                 <a href="index-categ.php?categ=kitchen#item">Kitchen</a>
+                                 <a href="index-categ.php?categ=baby#item">Baby</a>
+                                 <a href="index-categ.php?categ=mobiles#item">Mobiles</a>
+                                 <a href="index-categ.php?categ=fashion#item">Fashion</a>
+                                 <a href="index-categ.php?categ=instruments#item">Instruments</a>
+                                 <a href="index-categ.php?categ=books#item">Books</a>
+                                 <a href="index-categ.php?categ=others#item">Others</a>
                              </div>
 
 
                              <div class="categories mt-5">
                                  <h5>Sort by</h5>
-                                 <a href="index-categ.php?categ=<?php echo $categoryName ?>&sort=offered">Offered</a>
-                                 <a href="index-categ.php?categ=<?php echo $categoryName ?>&sort=wanted">Wanted</a>
+                                 <a
+                                     href="index-categ.php?categ=<?php echo $categoryName ?>&sort=offered#item">Offered</a>
+                                 <a href="index-categ.php?categ=<?php echo $categoryName ?>&sort=wanted#item">Wanted</a>
                              </div>
 
                          </div>
@@ -217,17 +221,24 @@
                         // checks if a user sorted the items, and if it is, do a query where it finds items that is offered or wanted
                         if (empty($sort)) {
                             $getPostbyCategoryQuery = "SELECT * FROM posts ORDER BY isFeatured DESC, post_id DESC   LIMIT $page_1,9";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts";
                         } else {
                             $getPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort'  ORDER BY isFeatured DESC, post_id DESC  LIMIT $page_1,9";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort'";
                         }
                     }
                     // if the category is featured, show only the featured items
                     else if ($categoryName == "featured") {
                         if (empty($sort)) {
                             $getPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true  ORDER BY post_id DESC LIMIT $page_1,9   ";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true  ";
                         } else {
                             $getPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND status = '$sort' ORDER BY post_id DESC LIMIT $page_1,9   ";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND status = '$sort'  ";
                         }
+
+
+
                         $showFeatured = true; //to set the count 
 
 
@@ -237,8 +248,10 @@
 
                         if (empty($sort)) {
                             $getPostbyCategoryQuery = "SELECT * FROM posts WHERE category = '$categoryName'  ORDER BY isFeatured DESC, post_id DESC  LIMIT $page_1,9";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE category = '$categoryName'";
                         } else {
                             $getPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort' AND category = '$categoryName'   ORDER BY isFeatured DESC, post_id DESC  LIMIT $page_1,9";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort' AND category = '$categoryName' ";
                         }
                     }
 
@@ -246,9 +259,9 @@
 
 
                     $getPostResult = mysqli_query($connection, $getPostbyCategoryQuery);
-
+                    $getTotalPostResult = mysqli_query($connection, $getTotalPostbyCategoryQuery);
                     // count all number of rows for pagination
-                    echo  $count = mysqli_num_rows($getPostResult);
+                    $count = mysqli_num_rows($getTotalPostResult);
 
                     // get total count befoure rounding to check if its empty
                     $count2  = $count;
@@ -256,7 +269,7 @@
                     // rounding since the result will show a float
 
                     if (!$showFeatured) {
-                        $count = ceil($count / 9 + 1);
+                        $count = ceil($count / 9);
                     } else {
                         $count = ceil($count / 9);
                     } ?>
@@ -304,7 +317,7 @@
 
 
 
-                             <div class="item2 col  ">
+                             <div class="item2 col  " id="item">
                                  <a href="posts.php?p_id=<?php echo $post_id ?>" class="linkToPost">
                                      <?php if ($isFeatured) { ?>
                                      <div class="featured-container">
@@ -462,8 +475,10 @@
          </div>
 
 
-         <div class=" bot-ad text-center m-1 m-lg-5 ">
-             <img src=" images/home/ad2.png" />
+         <div class=" bot-ad text-center m-1 m-lg-3 p-5 h-100 ">
+             <a href="https://rakbank.ae/wps/portal/retail-banking">
+                 <img src=" images/home/ad3.jpg" />
+             </a>
          </div>
 
 

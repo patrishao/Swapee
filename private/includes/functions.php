@@ -199,9 +199,27 @@ function checkIfConvoBetweenUsersExist($connection, $userLoggedIn, $user_to, $po
 
 
 
-// function categImage($category){
+// checking the ratings table 
+function calculateUserRating($connection, $user_to)
+{
 
-//     switch($category){
-//         case "all-items":
-//     }
-// }
+    // getting all rows from specific user id to get the ratings
+    $getRatingQuery = mysqli_query($connection, "SELECT * FROM rating WHERE ratingTo = '$user_to'");
+
+    // getting total number of ratings
+    $totalRatings = mysqli_num_rows($getRatingQuery);
+
+    // summing up the ratings
+    $sumRatingsQuery = mysqli_query($connection, "SELECT SUM(rating) FROM rating WHERE ratingTo = '$user_to' ");
+
+    $row = mysqli_fetch_array($sumRatingsQuery);
+    $sumRatings = $row[0];
+
+    // if no rating is available return result as 0, if there is return the ratings
+    if ($sumRatings == 0) {
+        return   "0";
+    } else {
+        // getting average rating
+        return $ratingCalculate = $sumRatings / $totalRatings;
+    }
+}

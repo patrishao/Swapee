@@ -21,7 +21,7 @@
 
 
     require_once 'private/includes/connection.php';
-
+    require_once 'private/includes/functions.php';
     require_once 'private/includes/current-user-details.php';
 
 
@@ -147,7 +147,6 @@
                     $db_password = $row2['password'];
                     $db_bio = $row2['bio'];
                     $db_profile_pic = $row2['profile_pic'];
-                    $db_rating = $row2['rating'];
                     $db_username = strtolower($row2['username']);
                     $db_location = $row2['location'];
                 }
@@ -178,8 +177,8 @@
                         </div>
 
                         <div class="rating" onclick="myRating()">
-                             <img src="images\icons\bi_star.png" alt="" class="rating-img">
-                            <p class="rating-details"><?php echo $db_rating; ?> / 5</p>
+                            <img src="images\icons\bi_star.png" alt="" class="rating-img">
+                            <p class="rating-details"><?php echo calculateUserRating($connection, $uID); ?> / 5</p>
 
                         </div>
 
@@ -196,40 +195,89 @@
 
                     </div>
 
-                        <div class="rating-box" id="id-box">
-                        <p class="" style="align-self:center">Rate this user:</p>
-                            <div class="rate"> 
-                                <input type="radio" id="star1" name="rate" value="1" />
+
+
+                    <!-- dont show rating box if user is the logged in user -->
+                    <?php if ($uID != $userID) { ?>
+                    <div class="rating-box " id="id-box">
+
+                        <?php
+
+                            // checking if user has already rated a specific person
+                            $getRatingQuery = mysqli_query($connection, "SELECT * FROM rating WHERE ratingTo = '$uID' AND ratingBY = $userID");
+
+                            // getting total number of ratings
+                            $ratingResult = mysqli_num_rows($getRatingQuery);
+
+                            $row = mysqli_fetch_array($getRatingQuery);
+
+
+
+
+                            if ($rating == 0) {
+
+                            ?>
+                        <p class="bold">Let others know if <?php echo $db_firstName ?> is trusted or not.</p>
+                        <p class="text-center">What do you think of <?php echo $db_firstName ?> ?</p>
+                        <form method="post" action="">
+                            <div class="rate">
+                                <input type="radio" id="star1" name="rate" value="5" />
                                 <label for="star1" title="text">1 star</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
+                                <input type="radio" id="star2" name="rate" value="4" />
                                 <label for="star2" title="text">2 stars</label>
                                 <input type="radio" id="star3" name="rate" value="3" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
+                                <input type="radio" id="star4" name="rate" value="2" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star5" name="rate" value="5" />
+                                <input type="radio" id="star5" name="rate" value="1" />
                                 <label for="star5" title="text">5 stars</label>
-                                
                             </div>
-                        </div>
+                            <button type="submit" name="rateUser" id=""
+                                class="rateUser ps-5 pe-5 pt-1 pb-1 mt-3 ">Submit</button>
+
+                        </form>
+
+                        <?php } else {
+                                $rating = $row['rating'];
+                                echo  '<p class="bold">You have already rated this user.
+                             Your rating was' . $rating . '</p>';
+                            } ?>
+
+                        <?php include 'private/ratings.php';
+                            ?>
+                    </div>
+
+
+
+
+                    <?php } ?>
 
                 </div>
 
             </div>
 
+            <?php
+
+
+
+            ?>
+
+
         </div>
     </div>
     <script>
-        function myRating(){
-            var rating = document.getElementById("id-box");
-            if (rating.style.display === "none"){
-                rating.style.display = "flex";
-            } else {
-                rating.style.display = "none";
-            }
-
+    function myRating() {
+        var rating = document.getElementById("id-box");
+        if (rating.style.display === "none") {
+            rating.style.display = "flex";
+        } else {
+            rating.style.display = "none";
         }
-        </script>
+
+    }
+    </script>
+
+
 
 </body>
 

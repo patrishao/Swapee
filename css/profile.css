@@ -173,6 +173,7 @@ img {
 .rating {
     display: flex;
     width: 60px;
+
     margin-left: 10px;
     border-radius: 20px;
 }
@@ -193,69 +194,117 @@ img {
     margin-left: 7px;
 }
 
-.rating:hover{
-    background-color:rgba(255, 227, 47, 0.29);
+.rating:hover {
+    background-color: rgba(255, 227, 47, 0.29);
     cursor: pointer;
 }
 
-.rating-box{
+.rating-box {
     display: none;
     justify-content: center;
     flex-direction: column;
-    background-color: #ffffff;
+    background: #5CACA9;
+    box-shadow: -4px 4px 11px #B5EFED;
+    color: white;
     width: 100%;
-    height: 100%;
-    padding: 30px;
+    max-height: fit-content;
+    padding: 40px;
     margin-top: 20px;
-    border: solid 1px;
-    border-radius: 20px;
+
+    border-radius: 15px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 18px;
+
 }
 
-.rate{
+.rating-box p {
+    line-height: 1em;
+
+}
+
+.rating-txt {
+    margin-bottom: 0;
+}
+
+.rate {
     display: flex;
     justify-content: center;
-    
+
+    margin-top: 0;
+
+
 }
 
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+.bold {
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+
 }
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
 }
-.rate:not(:checked) > label:before {
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.rate:not(:checked)>label:before {
     content: '★ ';
 }
-.rate > input:checked ~ label {
-    color: #ffd311;    
+
+.rate>input:checked~label {
+    color: #ffd311;
 }
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #7db4b4;  
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #ffd311;
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #7db4b4;  
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #ffd311;
+}
+
+.rateUser {
+    text-align: center;
+    background-color: #ffffff;
+    color: #5CACA9;
+    border: 0;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.rateUser:hover {
+    background-color: #ffd311;
+    color: white;
+
 }
 
 .prof-buttons {
     margin-left: 70px;
     margin-top: -6px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -302,7 +351,7 @@ img {
         top: 20px;
 
     }
-  
+
 
 }
 
