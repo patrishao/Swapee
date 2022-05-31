@@ -34,15 +34,11 @@
         <!-- inside container -->
         <div class="row">
 
-            <div class="logo">
-                <nav>
-                    <img src="images/logo.png" id="logo1" alt="" srcset="">
-                </nav>
-
-            </div>
-
             <!-- right side  -->
             <div class="col-sm-6 p-10">
+            <div class="logo logo1">
+                <img src="images/final logo.png" id="logo1" alt="" srcset="">
+            </div>
                 <div class="centerer">
                     <h1 class="login-title">SIGN UP</h1>
                     <div class="log-in-container d-flex justify-content-center">
@@ -72,11 +68,6 @@
                                     class="textbox-login" id="password2">
                                 <i class=" bi bi-eye-slash togglePass" id="togglePassword2"></i>
                             </div>
-
-
-
-
-                            <a href="#" class="forgot-p">Forgot password?</a>
 
                             <?php require_once('private/signup-data.php') ?>
 
