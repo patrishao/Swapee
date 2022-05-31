@@ -131,6 +131,10 @@ function getLatestMsg($userLoggedIn, $user2, $connection)
     return $sent_by . $row['body'];
 }
 
+
+
+
+
 // getting date from latest msgs
 function getDateFromLatestMsg($userLoggedIn, $user2, $connection)
 {

@@ -38,7 +38,9 @@
         }
 
 
-        if ($_GET['status'] == "paymentsuccess") { ?>
+        if (isset($_GET['status'])) {
+
+            if ($status == "paymentsuccess") { ?>
      <script>
      const Toast = Swal.mixin({
          toast: true,
@@ -57,7 +59,11 @@
          title: 'Payment success, your post is now featured.'
      });
      </script>
-     <?php } ?>
+
+     <?php }
+        } else {
+        }
+        ?>
 
 
 
@@ -78,6 +84,7 @@
                     $getPostByIDQuery = "SELECT * FROM posts WHERE user_id = $uID ORDER BY post_id DESC";
                     $getPostByIDResult = mysqli_query($connection, $getPostByIDQuery);
 
+                    $checkIfEmpty = mysqli_num_rows($getPostByIDResult);
 
                     while ($row = mysqli_fetch_assoc($getPostByIDResult)) {
 
@@ -166,7 +173,13 @@
 
 
 
-                 <?php } ?>
+                 <?php }
+
+                    if ($checkIfEmpty == 0) { ?>
+                 <p class="no-post">This user hasn't posted yet.</p>
+                 <?php }
+
+                    ?>
 
 
 
@@ -269,7 +282,7 @@
                                 ?>
                          <p class="bold">Let others know if <?php echo $db_firstName ?> is trusted or not.</p>
                          <p class="text-center">What do you think of <?php echo $db_firstName ?> ?</p>
-                         <form method="post" action="">
+                         <form method="post" action="" class="ratings">
                              <div class="rate">
                                  <input type="radio" id="star1" name="rate" value="5" />
                                  <label for="star1" title="text">1 star</label>

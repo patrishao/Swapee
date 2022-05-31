@@ -183,7 +183,7 @@
                 </div>
 
                 <!-- check if the userID is not the seller if it is, don't show the send message -->
-                <?php if ($userID != $post_user_id) { ?>
+                <?php if ($userID != $post_user_id ||  !empty($_SESSION['userID'])) { ?>
 
                 <div class="send-cont">
 
@@ -204,7 +204,9 @@
 
 
                             // only sending a message if the user has no conversation with the other user with that specificpost
-                            if (checkIfConvoBetweenUsersExist($connection, $userID, $post_user_id, $postID)) {
+
+                            if (!empty($_SESSION['userID'])) {
+                                if (checkIfConvoBetweenUsersExist($connection, $userID, $post_user_id, $postID)) {
 
                             ?>
 
@@ -238,6 +240,12 @@
 
 
                 <?php }
+                            } else { ?>
+                <p>You have to be logged in to message this user. <span><a class="linkToMsg" href="login.php">Login
+                            now.</span></a>
+                </p>
+
+                <?php    }
                         } ?>
 
 

@@ -316,7 +316,7 @@ img {
     margin-top: -6px;
 }
 
-form {
+.ratings {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -334,6 +334,14 @@ form {
 }
 
 
+
+.no-post {
+    color: #5CACA9;
+    font-weight: 600;
+    margin-top: 10%;
+    float: left;
+    font-size: 1.3em;
+}
 
 
 

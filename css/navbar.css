@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
 nav {
     display: flex;
     width: 100%;
@@ -30,7 +31,7 @@ nav ul li a {
     padding: 10px;
 }
 
-.a:hover {
+.navbar a:hover {
     background: #FEB005;
     color: white;
     border-radius: 10px;
@@ -97,46 +98,79 @@ input[type="checkbox"] {
     display: none;
 }
 
+nav .li {
+    position: relative;
+}
+
+
+.counter {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    right: 0;
+    bottom: -30%;
+    background-color: rgb(241, 91, 91);
+    border-radius: 100%;
+    color: white;
+
+    padding: 3px 10px;
+
+
+}
+
 @media screen and (max-width: 1024px) {
     nav {
         display: block;
         padding: 0;
     }
+
     nav .icon {
         display: inline-block;
         padding: 15px 30px;
     }
+
     nav .search-box {
         width: 100%;
         display: inline-flex;
         justify-content: center;
         margin-bottom: 15px;
     }
+
+    .navbar {}
+
     nav .search-box input {
         width: 50%;
     }
+
     nav ul {
         display: flex;
         flex-direction: column;
-        background-color: #FEB005;
         height: 0;
         visibility: hidden;
         transition: 0.03s;
+        width: 100%;
+        background-color: #FEB005;
     }
+
     nav ul li {
         text-align: center;
         width: 100%;
     }
+
     a:hover {
         background-color: white;
         color: #4a4846;
     }
+
     nav ul li a {
         color: aliceblue;
         font-size: 18px;
         padding: 25px;
         display: block;
     }
+
     nav .bar {
         display: block;
         position: absolute;
@@ -144,17 +178,26 @@ input[type="checkbox"] {
         right: 80px;
         cursor: pointer;
     }
+
     nav .bar #times {
         display: none;
     }
+
     #check:checked~nav .bar #times {
         display: block;
     }
+
     #check:checked~nav .bar #bars {
         display: none;
     }
+
     #check:checked~nav ul {
         visibility: visible;
         height: 325px;
+    }
+
+    #icon {
+        margin: 0%;
+        padding: 0%;
     }
 }

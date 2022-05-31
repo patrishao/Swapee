@@ -59,18 +59,20 @@
                     // getting the conversations of user
                     $convos = array();
 
-                    $getConvosQuery = mysqli_query($connection, "SELECT user_toID, user_fromID FROM messages WHERE user_toID = '$userLoggedIn' OR user_fromID = '$userLoggedIn'");
+                    $getConvosQuery = mysqli_query($connection, "SELECT * FROM messages WHERE user_toID = '$userLoggedIn' OR user_fromID = '$userLoggedIn'");
 
 
                     while ($row = mysqli_fetch_array($getConvosQuery)) {
                         // push wherever the user logged in is
                         $user_to_push = $row['user_toID'] != $userLoggedIn ? $row['user_toID'] : $row['user_fromID'];
+                        $isViewed = $row['isViewed'];
 
                         if (!in_array($user_to_push, $convos)) {
                             array_push($convos, $user_to_push);
                         }
                     }
 
+                    // getting last message of the users and displaying them
 
                     foreach ($convos as $username) {
 
@@ -78,6 +80,7 @@
                         $latest_message_details = getLatestMsg($userLoggedIn, $username, $connection);
                         $msgDate = getDateFromLatestMsg($userLoggedIn, $username, $connection);
 
+                        // if convo is way too high, limit it and replace dots
                         if (strlen($latest_message_details) > 35) {
                             $lastConvo = substr($latest_message_details, 0, 25) . "...";
                         } else {
@@ -90,7 +93,8 @@
 
                 <a href="message.php?u=<?php echo $username; ?>">
 
-                    <div class="specific-chat <?php echo  $username == $user_to  ? "active" : ""; ?> ">
+                    <div class="specific-chat <?php echo  $username == $user_to  ? "active" : "";
+                                                        $isViewed != 0 ? "unviewed"  : "" ?> ">
                         <div class="specific-user">
 
                             <div class="identifier">

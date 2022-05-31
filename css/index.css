@@ -23,7 +23,13 @@ body {
 
 }
 
-.title h1 {
+
+.title2 {
+    background-color: #EDF9F8;
+}
+
+.title h1,
+.title h2 {
     font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -49,7 +55,11 @@ body {
     top: 50%;
     transform: (-50%);
     color: rgba(44, 44, 44, 0.51);
-    ;
+
+}
+
+body {
+    background-color: black;
 }
 
 .categ-top-type {
@@ -57,7 +67,12 @@ body {
     text-transform: capitalize;
 }
 
-.title img {
+.title img,
+.title2 img {
+    width: 50%;
+}
+
+.title-img {
     width: 50%;
 }
 
