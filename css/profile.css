@@ -88,8 +88,24 @@ img {
 
 .boost-item {
     font-weight: 600;
+    background: none;
+    color: white;
+    border: none;
+    text-decoration: none;
 }
 
+.boost-item:hover {
+    color: #5CACA9;
+    stroke: #5CACA9;
+}
+
+.boost-item svg {
+    position: relative;
+}
+
+.boost-item>svg *:hover {
+    stroke: #5CACA9;
+}
 
 
 

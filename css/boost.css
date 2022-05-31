@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+* {
+    font-family: 'Inter';
+}
+
+.modal {
+    width: 100%;
+}
+
+.modal-dialog {
+    border-radius: 20px;
+    border: none;
+
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 10px;
+    font-weight: 700;
+    display: flex;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-content {
+    background-color: whitesmoke;
+
+}
+
+.modal-body {
+    border-top: 1px solid black;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 15px;
+}
+
+.btn {
+    background-color: #5CACA9;
+    color: white;
+    border: none;
+    width: 20%;
+    transition: 0.5s;
+
+}
+
+.btn:hover {
+    background-color: #FEB005;
+    color: white;
+}
+
+.form-check {
+    margin-bottom: 10px;
+    margin-left: 2em;
+}
+
+.duration,
+.payment {
+    background: #FFFFFF;
+    box-shadow: -1px 1px 3px #B5EFED;
+    height: auto;
+    width: auto;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 10px;
+
+}
+
+
+
+
+
+.form-control1 {
+    float: right;
+}
+
+
+
+.model-content form {
+    width: 100%;
+}
+
+
+
+
+.form-check-input:checked,
+.form-check-input label:checked {
+    background-color: #5CACA9;
+    border: none;
+    color:
+        #5CACA9;
+}
+
+.modal-body p {
+    color:
+        #5CACA9;
+}
