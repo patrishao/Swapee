@@ -29,13 +29,6 @@
         <!-- inside container -->
         <div class="row">
 
-            <div class="logo">
-                <nav>
-                    <img src="images/logo.png" id="logo1" alt="" srcset="">
-                </nav>
-
-            </div>
-
 
             <!-- left side -->
             <div class="col-sm-6 p-0 login-face-con">
@@ -45,6 +38,9 @@
 
             <!-- right side  -->
             <div class="col-sm-6 p-10">
+            <div class="logo logo1">
+                <img src="images/logo.png" id="logo1" alt="" srcset="">
+            </div>
                 <div class="centerer">
                     <h1 class="login-title">LOG IN</h1>
                     <div class="log-in-container d-flex justify-content-center">
