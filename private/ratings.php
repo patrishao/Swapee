@@ -14,7 +14,8 @@ if (isset($_POST['rateUser'])) {
         }
 
 
-        echo ("<script>location.href=profile.php?u-id=$uID'</script>");
+
+        echo ("<script>location.href='profile.php?u-id=$uID'</script>");
     } else {
         echo '<p style="color:  rgb(165, 60, 60);">Please fill out all the input fields.</p>';
     }

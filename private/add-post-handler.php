@@ -25,6 +25,9 @@ if (isset($_POST['submit'])) {
     $description = cleanInput($connection, $description);
 
 
+    $description = str_replace('\r\n', '\n', $description);
+    $description = nl2br($description);
+
     // check if input is empty
     if (empty($images) || empty($title) || empty($category) || empty($description)) {
         echo '<div class="alert alert-danger" role="alert">
@@ -36,7 +39,7 @@ if (isset($_POST['submit'])) {
     Maximum or minimum image requirement is not met. Total number of images
     should only be 4.
     </div>';
-        } else if (strlen($title) >= 20) {
+        } else if (strlen($title) >= 100) {
             echo '<div class="alert alert-danger" role="alert">
    Your title is way too long!
     </div>';
@@ -63,7 +66,8 @@ if (isset($_POST['submit'])) {
             }
 
 
-            header("Location: profile.php");
+
+            echo '<script>window.location.href = "profile.php"</script>';
         }
     }
 }

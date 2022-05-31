@@ -88,7 +88,8 @@
                     <div class="det-cont">
                         <div class="input-details">
                             <div class="details-group">
-                                <input type="text" name="title" value="" placeholder="Title"> <br><br>
+
+                                <textarea name="title" value="" placeholder="Title" rows="1"></textarea>
                             </div>
                             <div class="details-group">
                                 <input list="categories" name="category" placeholder="Category"> <br><br>

@@ -480,7 +480,7 @@
          </div>
 
 
-         <div class=" bot-ad text-center m-1 m-lg-3 p-5 h-100 ">
+         <div class=" bot-ad text-center mt-5 m-lg-3 p-5  ">
              <a href="https://rakbank.ae/wps/portal/retail-banking">
                  <img src=" images/home/ad3.jpg" />
              </a>

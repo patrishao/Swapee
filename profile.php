@@ -29,6 +29,8 @@
         require_once 'private/includes/functions.php';
         require_once 'private/includes/current-user-details.php';
 
+        // error_reporting(E_ERROR);
+
 
         if (isset($_GET['u-id'])) {
             $uID = $_GET['u-id'];
@@ -38,7 +40,11 @@
         }
 
 
+
+
         if (isset($_GET['status'])) {
+
+            $status = $_GET['status'];
 
             if ($status == "paymentsuccess") { ?>
      <script>
@@ -62,6 +68,7 @@
 
      <?php }
         } else {
+            $status = "";
         }
         ?>
 
@@ -219,7 +226,8 @@
                  <div class="content-container">
 
                      <div class="container-firstpt">
-                         <img src="images/uploaded-imgs/<?php echo   $db_profile_pic;
+
+                         <img src="images/uploaded-imgs/<?php echo   $db_profile_pic
                                                         ?>" alt="" class="profile-pic">
                          <div class="name-user">
                              <div class="name"><?php echo $db_firstName . " " . $db_lastName; ?></div>
@@ -233,6 +241,8 @@
                                  class="location-img">
                              <p class="location-details"><?php if (empty($db_location)) {
                                                                 echo "No location yet";
+                                                            } else {
+                                                                echo $db_location;
                                                             } ?></p>
                          </div>
 
@@ -277,7 +287,7 @@
 
 
 
-                                if ($rating == 0) {
+                                if ($ratingResult == 0) {
 
                                 ?>
                          <p class="bold">Let others know if <?php echo $db_firstName ?> is trusted or not.</p>
@@ -303,7 +313,7 @@
                          <?php } else {
                                     $rating = $row['rating'];
                                     echo  '<p class="bold">You have already rated this user.
-                             Your rating was' . $rating . '</p>';
+                             Your rating was ' . $rating . '</p>';
                                 } ?>
 
                          <?php include 'private/ratings.php';

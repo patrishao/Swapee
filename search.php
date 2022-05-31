@@ -77,7 +77,7 @@
 
          <div class="top-ad text-center m-4 m-lg-5  ">
 
-             <img src="images/home/topad2.png" alt="" class="">
+             <img src="images/home/ad4.jpg" alt="" class="">
 
          </div>
 
@@ -423,7 +423,6 @@
 
 
 
-
              <?php if ($count2 == 0) { ?>
              <div
                  class="container d-flex align-content-center justify-content-center  align-items-center justify-items-center">
@@ -438,9 +437,9 @@
          </div>
 
 
-         <div class=" bot-ad text-center m-1 m-lg-3 p-5 h-100 ">
+         <div class=" bot-ad text-center mt-5 mb-4 m-lg-5  ">
              <a href="https://rakbank.ae/wps/portal/retail-banking">
-                 <img src=" images/home/ad3.jpg" />
+                 <img src=" images/home/ad5.jpg" class="" />
              </a>
          </div>
 

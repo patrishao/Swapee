@@ -1,5 +1,8 @@
 <?php
 
+include 'private/includes/current-user-details.php';
+
+
 if (isset($_POST['save'])) {
 
 
@@ -94,6 +97,9 @@ if (isset($_POST['save'])) {
                 $_SESSION['profPic'] = $profilePhoto;
 
                 echo ("<script>location.href='profile.php'</script>");
+
+                // header("Location: profile.php");
+
             } else {
                 echo '<div class="alert alert-danger" role="alert">
             Incorrect password, please try again.

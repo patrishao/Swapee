@@ -88,7 +88,7 @@ if (isset($_POST['signUp'])) {
                     if (!$register_user_query) {
                         die("QUERY FAILED " . mysqli_error($connection));
                     } else {
-                        echo ("<script>location.href='index.php?status=success'</script>");
+                        echo ("<script>location.href='login.php?status=success'</script>");
                     }
                 }
             }

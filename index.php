@@ -46,7 +46,7 @@
                 <?php } else { ?>
 
                 <div class="container animate__animated  animate__fadeInDown">
-                    <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome back, <?php echo $firstName ?></h1>
+                    <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome, <?php echo $firstName ?></h1>
 
                     <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
                 </div>
@@ -307,7 +307,7 @@
         </div>
 
 
-        <div class="bot-ad text-center mt-3 mb-4 m-lg-5  ">
+        <div class="bot-ad text-center mt-5 mb-4 m-lg-5 p-5  ">
             <a href="https://www.samsung.com/ae/">
                 <img src=" images/home/ad2.png" />
             </a>
