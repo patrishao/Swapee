@@ -60,9 +60,13 @@
                     $user_id = $row['user_id'];
                     $status = $row['status'];
                     $isFeatured = $row['isFeatured'];
-                    $coverImg = $row['cover-img'];
+                    $coverImg = $row['coverImg'];
                     $dateCreated = $row['dateCreated'];
+                    $hasBeenSwapped = $row['hasBeenSwapped'];
 
+
+                    $timestamp = strtotime($dateCreated);
+                    $new_date_format = date('l, M d, Y', $timestamp);
 
                 ?>
                 <a href="posts.php?p_id=<?php echo $postID ?>" class="post-link">
@@ -98,7 +102,7 @@
                             class=" info-container d-flex  justify-content-md-between flex-lg-row flex-column ms-4 mt-4 m-sm-3">
                             <div class=" time-item">
                                 <img src="images\icons\icon-park-outline_time.png" alt="">
-                                <?php echo $dateCreated  ?>
+                                <?php echo $new_date_format  ?>
                             </div>
 
 
@@ -188,7 +192,10 @@
 
                         <div class="prof-buttons ">
                             <a href="edit-profile.php"><img src="images\icons\ci_settings.png" alt=""></a>
-                            <img src="images\icons\akar-icons_plus.png" alt="">
+
+                            <a href="add-post.php">
+                                <img src="images\icons\akar-icons_plus.png" alt="">
+                            </a>
                         </div>
 
                         <?php } ?>

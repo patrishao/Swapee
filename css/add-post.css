@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     font-family: 'Inter', sans-serif;
 }
@@ -22,9 +23,10 @@ button {
 
 .main-container {
     display: flex;
+
     margin: auto;
-    height: 900px;
-    width: 80%;
+
+    width: 85%;
     border: 1px solid #8A8A8A;
     border-radius: 10px;
     flex-direction: column;
@@ -70,8 +72,10 @@ button {
     position: relative;
     height: 100%;
     width: 100%;
-    flex-direction: row
+    flex-direction: row;
 }
+
+
 
 .upload-container {
     position: relative;
@@ -82,10 +86,42 @@ button {
 
 .upload-container .bg {
     position: relative;
-    background-color: rgb(142, 142, 142);
+    background-color: #C2C2C2;
     width: 100%;
     height: 100%;
     display: block;
+}
+
+.photo {
+    width: 100%;
+    object-fit: cover;
+    height: 90vh;
+
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 9999;
+
+}
+
+.arrow button {
+    background-color: transparent;
+    border: none;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.438);
+    padding: 1em 5em;
+
+
+}
+
+.right-arrow {
+    right: 0;
 }
 
 .upload-container .upload-overlay {
@@ -119,7 +155,7 @@ button {
     position: relative;
     display: flex;
     justify-content: center;
-    width: 40%;
+    width: 100%;
 }
 
 .det-cont {
@@ -142,6 +178,7 @@ button {
     text-decoration: none;
     border: none;
     border-bottom: 1px solid #8A8A8A;
+    line-height: 10px;
 }
 
 .det-cont .details-group textarea {
@@ -156,4 +193,27 @@ button {
     overflow-y: none;
     border: none;
     border-bottom: 1px solid #8A8A8A;
+}
+
+/* alert */
+
+.alert {
+    text-align: center;
+    margin: 1em 0em;
+    width: 100%;
+    border-radius: 0;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    border-bottom: 1px solid #8A8A8A;
+}
+
+.archive {
+    border: 0px;
+
+    padding: 0 1em;
+
 }

@@ -7,17 +7,21 @@ function cleanInput($connection, $input)
     return $input;
 }
 
-function checkEmail($email)
+function randomPfp()
 {
-    $email = "example.com";
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://api.mailcheck.ai/domain/' . $email);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($ch);
-    curl_close($ch);
+    $defaultImgs = array();
+    $defaultImgs[] = "defpfp1.png";
+    $defaultImgs[] = "defpfp2.png";
+    $defaultImgs[] = "defpfp3.png";
+    $defaultImgs[] = "defpfp4.png";
+    $defaultImgs[] = "defpfp5.png";
+    $defaultImgs[] = "defpfp6.png";
+    $defaultImgs[] = "defpfp7.png";
+    $defaultImgs[] = "defpfp8.png";
 
-    var_dump($response);
+
+    return $defaultImgs[array_rand($defaultImgs, 1)];
 }
 
 // this function checks if a userinput from the database exists
@@ -38,6 +42,8 @@ function checkIfValueExist($connection, $field, $data)
     }
 }
 
+
+
 function checkItemisOffered($status)
 {
 
@@ -45,6 +51,17 @@ function checkItemisOffered($status)
         return "status-offered";
     } else {
         return "status-wanted";
+    }
+}
+
+
+function checkItemisClosed($status)
+{
+
+    if ($status === "yes") {
+        return true;
+    } else {
+        return false;
     }
 }
 

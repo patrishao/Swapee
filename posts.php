@@ -54,11 +54,12 @@
         $post_user_id = $row['user_id'];
         $status = $row['status'];
         $isFeatured = $row['isFeatured'];
-        $cover_img = $row['cover-img'];
+        $cover_img = $row['coverImg'];
         $dateCreated = $row['dateCreated'];
         $sub_img1 = $row['sub_img1'];
         $sub_img2 = $row['sub_img2'];
         $sub_img3 = $row['sub_img3'];
+        $hasBeenSwapped = $row['hasBeenSwapped'];
     }
 
 
@@ -187,16 +188,25 @@
                 <div class="send-cont">
 
 
+                    <?php
+                        if (checkItemisClosed($hasBeenSwapped)) { ?>
+                    <p class="d-flex justify-content-center text-center closed">This deal is<b>&nbsp;closed. &nbsp;</b>
+                    </p>
+
+                    <?php } else { ?>
+
+
+
                     <p class="send-title">Send seller a message</p>
                     <?php require 'private/sendSellerMsg.php';
 
 
 
 
-                        // only sending a message if the user has no conversation with the other user with that specific post
-                        if (checkIfConvoBetweenUsersExist($connection, $userID, $post_user_id, $postID)) {
+                            // only sending a message if the user has no conversation with the other user with that specificpost
+                            if (checkIfConvoBetweenUsersExist($connection, $userID, $post_user_id, $postID)) {
 
-                        ?>
+                            ?>
 
                     <p>You already have an existing conversation with this user. <span><a class="linkToMsg"
                                 href="message.php?u=<?php echo $post_user_id ?>">Go to the
@@ -227,7 +237,10 @@
 
 
 
-                <?php } ?>
+                <?php }
+                        } ?>
+
+
 
 
 
@@ -235,7 +248,21 @@
 
             </div>
 
-            <?php } ?>
+            <?php } else {
+
+                    if (checkItemisClosed($hasBeenSwapped)) { ?>
+            <p class="d-flex justify-content-center text-center">This deal is<b>&nbsp;closed. &nbsp;</b> Only you
+                can see it.
+            </p>
+            <?php } else { ?>
+
+            <a href="edit-post.php?p_id=<?php echo $post_id ?>" class="edit-post">Edit this post</a>
+            <?php }
+                }   ?>
+
+
+
+
         </div>
 
     </div>

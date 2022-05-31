@@ -20,9 +20,16 @@ if (isset($_POST['sendMsg'])) {
         // cleaning the text
         $message = cleanInput($connection, $message);
 
-
         // inserting the query to the database, and making sure that the sender or userfrom is the userloggedin
         $insertMsgQuery = "INSERT INTO messages (user_toID, user_fromID, body, date, itemImg, subject, message_post_id) VALUES ('$userTo', '$userLoggedIn', '$message', '$date', '$postImg', '$subject', '$postID')";
+
+
+        // setting the post status to wanted as someone sent a message about it
+        $updateStatus = mysqli_query($connection, "UPDATE posts SET status = 'wanted' WHERE post_id = '$postID'");
+
+        if (!$updateStatus) {
+            echo "Error " . mysqli_error($connection);
+        }
 
 
         $insert = mysqli_query($connection, $insertMsgQuery);

@@ -13,7 +13,12 @@
 
      <!-- bootstrap icons -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
+     <!-- animate.css -->
+
      <!-- css -->
+
      <link rel="stylesheet" href="css/home.css?version=51">
  </head>
 
@@ -220,21 +225,21 @@
 
                         // checks if a user sorted the items, and if it is, do a query where it finds items that is offered or wanted
                         if (empty($sort)) {
-                            $getPostbyCategoryQuery = "SELECT * FROM posts ORDER BY isFeatured DESC, post_id DESC   LIMIT $page_1,9";
-                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts";
+                            $getPostbyCategoryQuery = "SELECT * FROM posts WHERE hasBeenSwapped = 'no' ORDER BY isFeatured DESC, post_id DESC   LIMIT $page_1,9";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE hasBeenSwapped = 'no'";
                         } else {
-                            $getPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort'  ORDER BY isFeatured DESC, post_id DESC  LIMIT $page_1,9";
-                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort'";
+                            $getPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort' AND hasBeenSwapped = 'no' ORDER BY isFeatured DESC, post_id DESC  LIMIT $page_1,9";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE status = '$sort' AND hasBeenSwapped = 'no'";
                         }
                     }
                     // if the category is featured, show only the featured items
                     else if ($categoryName == "featured") {
                         if (empty($sort)) {
-                            $getPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true  ORDER BY post_id DESC LIMIT $page_1,9   ";
-                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true  ";
+                            $getPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND hasBeenSwapped = 'no' ORDER BY post_id DESC LIMIT $page_1,9   ";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND hasBeenSwapped = 'no' ";
                         } else {
                             $getPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND status = '$sort' ORDER BY post_id DESC LIMIT $page_1,9   ";
-                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND status = '$sort'  ";
+                            $getTotalPostbyCategoryQuery = "SELECT * FROM posts WHERE isFeatured = true AND status = '$sort' AND hasBeenSwapped = 'no'  ";
                         }
 
 
@@ -309,7 +314,7 @@
                                     $title = $row['title'];
                                     $category = ucfirst($row['category']);
                                     $status = $row['status'];
-                                    $cover_img = $row['cover-img'];
+                                    $cover_img = $row['coverImg'];
                                     $isFeatured = $row['isFeatured'];
 
 

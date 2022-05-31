@@ -15,7 +15,13 @@
     <?php include 'navbar.php';
     require_once 'private/includes/connection.php';
     require_once 'private/includes/functions.php';
+    include_once 'private/includes/current-user-details.php';
+
     require_once 'private/message-handler.php';
+
+
+
+
 
 
     ?>
@@ -172,6 +178,8 @@
                             $body = $row['body'];
                             $itemImg = $row['itemImg'];
                             $subject = $row['subject'];
+                            $message_post_id = $row['message_post_id'];
+
 
                             if ($sender == $userLoggedIn) {
 
@@ -189,7 +197,12 @@
                         <div class="img-inquire">
                             <?php if (!empty($itemImg)) {  ?>
                             <img src="images/uploaded-imgs/<?php echo $itemImg ?>" class="imgSubject" />
-                            <p class="msgSubject"> <?php echo $subject ?></p>
+                            <?php } ?>
+
+                            <?php if (!empty($subject)) {  ?>
+                            <a href="posts.php?p_id=<?php echo $message_post_id ?>" class="w-100 msgSubject">
+                                <p class=""> <?php echo $subject ?></p>
+                            </a>
                             <?php } ?>
 
                         </div>
@@ -220,7 +233,12 @@
 
                             <?php if (!empty($itemImg)) {  ?>
                             <img src="images/uploaded-imgs/<?php echo $itemImg ?>" class="imgSubject" />
-                            <p class="msgSubject"> <?php echo $subject ?></p>
+                            <?php } ?>
+
+                            <?php if (!empty($subject)) {  ?>
+                            <a href="posts.php?p_id=<?php echo $message_post_id ?>" class="w-100 msgSubject">
+                                <p class=""> <?php echo $subject ?></p>
+                            </a>
                             <?php } ?>
                         </div>
 
@@ -235,25 +253,68 @@
                     </div>
 
                     <?php  }
-                        } ?>
+                        }
+                        ?>
 
                 </div>
 
 
 
-                <form action="" class="form" method="post">
+                <form action="" class="form" method="post" enctype="multipart/form-data">
+
 
                     <textarea name="txtMsg" class="txt-msg" placeholder="Enter your message here.." id="txt"></textarea>
 
 
-                    <button type="submit" name="sendMsg" id="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M9.91245 12H4.00045L2.02345 4.13505C2.01079 4.08934 2.00308 4.0424 2.00045 3.99505C1.97845 3.27405 2.77245 2.77405 3.46045 3.10405L22.0004 12L3.46045 20.896C2.78045 21.223 1.99645 20.737 2.00045 20.029C2.00247 19.9658 2.01359 19.9031 2.03345 19.843L3.50045 15"
-                                stroke="#5CACA9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
+
+
+                    <div class="buttons">
+
+
+
+
+                        <label for="img-upload" class="img-btn"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                                height="40" viewBox="0 0 33 33" fill="none">
+                                <path
+                                    d="M5.5 6.875H23.375V16.5H26.125V6.875C26.125 5.35837 24.8916 4.125 23.375 4.125H5.5C3.98338 4.125 2.75 5.35837 2.75 6.875V23.375C2.75 24.8916 3.98338 26.125 5.5 26.125H16.5V23.375H5.5V6.875Z"
+                                    fill="#5CACA9" />
+                                <path d="M11 15.125L6.875 20.625H22L16.5 12.375L12.375 17.875L11 15.125Z"
+                                    fill="#5CACA9" />
+                                <path
+                                    d="M26.125 19.25H23.375V23.375H19.25V26.125H23.375V30.25H26.125V26.125H30.25V23.375H26.125V19.25Z"
+                                    fill="#5CACA9" />
+                            </svg></label>
+
+                        <input id="img-upload" type="file" name="img" accept=" image/png, image/jpeg, image/gif"
+                            hidden />
+
+                        <button type="submit" name="sendMsg" id="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M9.91245 12H4.00045L2.02345 4.13505C2.01079 4.08934 2.00308 4.0424 2.00045 3.99505C1.97845 3.27405 2.77245 2.77405 3.46045 3.10405L22.0004 12L3.46045 20.896C2.78045 21.223 1.99645 20.737 2.00045 20.029C2.00247 19.9658 2.01359 19.9031 2.03345 19.843L3.50045 15"
+                                    stroke="#5CACA9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+
+
+
+
+
+
                 </form>
+
+
+                <div class="alert  <?php if ($emptyMsg) {
+                                            echo "d-block";
+                                        } else {
+                                            echo "d-none";
+                                        } ?>">
+                    Please enter a text.
+                </div>
+
 
 
 

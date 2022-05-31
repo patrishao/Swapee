@@ -12,6 +12,8 @@ if (isset($_POST['signUp'])) {
     $password = $_POST['password'];
     $confirmPass = $_POST['c-password'];
 
+    $randomPfp = randomPfp();
+
 
     // calling the function cleanInput to escape strings
 
@@ -21,6 +23,18 @@ if (isset($_POST['signUp'])) {
     $email = cleanInput($connection, $email);
     $password = cleanInput($connection, $password);
     $confirmPass = cleanInput($connection, $confirmPass);
+
+
+    // making the first letter of the text the only capital letter
+    $firstName = strtolower($firstName);
+    $firstName =  ucfirst($firstName);
+
+    $lastName = strtolower($lastName);
+    $lastName =  ucfirst($lastName);
+
+    // making the username in all lowercase
+    $username = strtolower($username);
+
 
     // checking if all the input field is filled 
     if (empty($email) || empty($username) || empty($firstName) || empty($lastName) || empty($password) || empty($confirmPass)) {
@@ -66,15 +80,15 @@ if (isset($_POST['signUp'])) {
 
 
                     // finally inserting the data to the database
-                    $insertQuery = "INSERT INTO users (first_name, last_name, username, password, email)  VALUES ('$firstName', '$lastName', '$username', '$password',
-                '$email')";
+                    $insertQuery = "INSERT INTO users (first_name, last_name, username, password, email, profile_pic)  VALUES ('$firstName', '$lastName', '$username', '$password',
+                '$email', '$randomPfp')";
 
                     // checking if the query failed
                     $register_user_query = mysqli_query($connection, $insertQuery);
                     if (!$register_user_query) {
                         die("QUERY FAILED " . mysqli_error($connection));
                     } else {
-                        // echo ("<script>location.href='index.php?status=success'</script>");
+                        echo ("<script>location.href='index.php?status=success'</script>");
                     }
                 }
             }

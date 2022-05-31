@@ -11,6 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
     <!-- css -->
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -27,7 +30,7 @@
     <div class="body">
 
         <!-- title -->
-        <div class="title  ">
+        <div class="title   ">
 
 
             <div class="container d-flex justify-content-center align-content-center align-items-center ">
@@ -35,20 +38,20 @@
 
                 <?php if (empty($userID)) { ?>
 
-                <div class="container">
+                <div class="container animate__animated  animate__fadeInDown">
                     <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome to Swapee!</h1>
 
                     <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
                 </div>
                 <?php } else { ?>
 
-                <div class="container">
+                <div class="container animate__animated  animate__fadeInDown">
                     <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome back, <?php echo $firstName ?></h1>
 
                     <p class="ps-lg-5 pe-lg-5 pt-lg-0 p-2 ">How's swapping?</p>
                 </div>
                 <?php } ?>
-                <img src="images/home/illus_homepage.png" alt="" class="">
+                <img src="images/home/illus_homepage.png" alt="" class="animate__animated  animate__fadeInDown">
 
             </div>
 
@@ -178,8 +181,8 @@
                             require_once('private/includes/functions.php');
 
 
-                            // getting the most recent featured items but limit it to 3
-                            $getFeaturedItemsQuery = "SELECT * FROM posts WHERE isFeatured = true ORDER BY post_id DESC LIMIT 3";
+                            // getting the most recent featured items that is hasnt been swapped or deal is not closed   but limit it to 3
+                            $getFeaturedItemsQuery = "SELECT * FROM posts WHERE isFeatured = true AND hasBeenSwapped = 'no' ORDER BY post_id DESC LIMIT 3";
 
                             $getFeaturedItemResult = mysqli_query($connection, $getFeaturedItemsQuery);
 
@@ -190,7 +193,7 @@
                                 $title = $row['title'];
                                 $category = ucfirst($row['category']);
                                 $status = $row['status'];
-                                $cover_img = $row['cover-img'];
+                                $cover_img = $row['coverImg'];
 
 
 
@@ -237,7 +240,7 @@
 
                             // getting the most recent featured items but start with the 3rd to the last row until the last 2 rows, to continue 
                             // the loop from the 1st row.
-                            $getFeaturedItemsQuery2 = "SELECT * FROM posts WHERE isFeatured = true ORDER BY post_id DESC LIMIT 3,2";
+                            $getFeaturedItemsQuery2 = "SELECT * FROM posts WHERE isFeatured = true AND hasBeenSwapped = 'no' ORDER BY post_id DESC LIMIT 3,2";
 
                             $getFeaturedItemResult2 = mysqli_query($connection, $getFeaturedItemsQuery2);
 
@@ -247,7 +250,7 @@
                                 $title = $row['title'];
                                 $category = ucfirst($row['category']);
                                 $status = $row['status'];
-                                $cover_img = $row['cover-img'];
+                                $cover_img = $row['coverImg'];
 
 
 

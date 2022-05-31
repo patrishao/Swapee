@@ -165,6 +165,24 @@ textarea {
 
 }
 
+.alert {
+    text-align: center;
+    background-color: #F8D7DA;
+    margin: 0.1em 3em;
+    padding: 1em;
+    color: #dc3545;
+    margin-bottom: 1em;
+
+    border-radius: 0;
+}
+
+
+.img-holder {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
 .inbox::-webkit-scrollbar,
 .chat-list::-webkit-scrollbar {
     width: 12px;
@@ -202,11 +220,17 @@ form {
 
 }
 
-form button {
+form button,
+.img-btn {
     color: #5CACA9;
     background-color: transparent;
     border: none;
 
+}
+
+.img-btn {
+    vertical-align: middle;
+    margin-top: 0.3em;
 }
 
 .txt-msg {
@@ -381,6 +405,7 @@ a {
     width: 30%;
     max-height: 30vh;
     margin-left: 1em;
+    border-radius: 0.5em;
 }
 
 .msgSubject {

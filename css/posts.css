@@ -293,3 +293,35 @@
     text-decoration: none;
     color: black;
 }
+
+/* edit button */
+
+.edit-post {
+    color: #fff;
+    background-color: #5CACA9;
+
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.7em 0em;
+    margin: 0 1.5em;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.edit-post:hover {
+    background-color: #FEB005;
+    color: #fff;
+
+
+}
+
+
+.closed {
+    margin-top: 1em;
+    font-size: 20px;
+}
