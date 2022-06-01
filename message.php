@@ -249,7 +249,8 @@
                         <div class="chatter2">
 
                             <a href="profile.php?u-id=<?php echo $user_to; ?>">
-                                <img class="chatter-img" src="images\<?php echo getUserImg($connection, $user_to) ?>">
+                                <img class="chatter-img"
+                                    src="images/uploaded-imgs/<?php echo getUserImg($connection,  $user_to) ?>">
                             </a>
                             <p class="chat-text"><?php echo $body ?></p>
 

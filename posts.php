@@ -183,7 +183,7 @@
                 </div>
 
                 <!-- check if the userID is not the seller if it is, don't show the send message -->
-                <?php if ($userID != $post_user_id ||  !empty($_SESSION['userID'])) { ?>
+                <?php if ($userID != $post_user_id) { ?>
 
                 <div class="send-cont">
 

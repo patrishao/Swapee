@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
         echo '<div class="alert alert-danger" role="alert">
     Please fill in the required fields.
     </div>';
-    } else if (strlen($title) >= 20) {
+    } else if (strlen($title) >= 100) {
         echo '<div class="alert alert-danger" role="alert">
    Your title is way too long!
     </div>';
