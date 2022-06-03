@@ -62,6 +62,7 @@ if (isset($_POST['login'])) {
 
                 // sending a data that the user is logged in
                 echo ("<script>location.href='index.php?status=loggedin'</script>");
+                header('Cache-Control: no-cache, no-store, must-revalidate');
             } else {
                 echo '<div class="alert alert-danger" role="alert">
                Password is incorrect.

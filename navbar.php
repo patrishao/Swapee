@@ -12,7 +12,6 @@
 
 <body>
 
-    <?php include_once 'private/includes/current-user-details.php'; ?>
 
     <input type="checkbox" id="check">
     <nav>

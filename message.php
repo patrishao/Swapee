@@ -59,7 +59,7 @@
                     // getting the conversations of user
                     $convos = array();
 
-                    $getConvosQuery = mysqli_query($connection, "SELECT * FROM messages WHERE user_toID = '$userLoggedIn' OR user_fromID = '$userLoggedIn'");
+                    $getConvosQuery = mysqli_query($connection, "SELECT * FROM messages WHERE user_toID = '$userLoggedIn' OR user_fromID = '$userLoggedIn' ORDER BY msg_id DESC");
 
 
                     while ($row = mysqli_fetch_array($getConvosQuery)) {

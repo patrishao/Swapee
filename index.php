@@ -20,7 +20,8 @@
 
 <body>
 
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar.php';
+    ?>
     <?php include 'private/includes/current-user-details.php'; ?>
 
 
@@ -36,7 +37,7 @@
             <div class="container d-flex justify-content-center align-content-center align-items-center ">
 
 
-                <?php if (empty($userID)) { ?>
+                <?php if (empty($userID) || session_status() != PHP_SESSION_ACTIVE) { ?>
 
                 <div class="container animate__animated  animate__fadeInDown">
                     <h1 class="ps-lg-5 pe-lg-5 p-2 pb-lg-0 ">Welcome to Swapee!</h1>
