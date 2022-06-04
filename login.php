@@ -39,7 +39,7 @@
             <!-- right side  -->
             <div class="col-sm-6 p-10">
             <div class="logo logo1">
-                <img src="images/final logo.png" id="logo1" alt="" srcset="">
+                <img src="images/fina-logo.png" id="logo1" alt="" srcset="">
             </div>
                 <div class="centerer">
                     <h1 class="login-title">LOG IN</h1>

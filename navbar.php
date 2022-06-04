@@ -18,7 +18,7 @@
 
         <!-- icon -->
         <div id="icon">
-            <img src="images/logo.png" alt="" srcset="">
+            <img src="images/logo-M.png" alt="" srcset="">
         </div>
 
         <!-- search -->

@@ -27,7 +27,7 @@
             <header class="head my-3">
                 <nav class="navbar navbar-expand-lg navbar-light head__custom-nav">
                     <a class="navbar-brand d-flex align-items-center" href="#">
-                        <img src="images/logo.png">
+                        <img src="images/logo-M.png">
                         <span>SWAPEE</span>
                     </a>
 
